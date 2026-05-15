@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PUMTO - 저장한 학원</title>
+  <link rel="stylesheet" href="save-academy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <button class="back-btn" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left-long"></i>
+        </button>
+        <h1 class="title">저장한 학원</h1>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Empty State Section -->
+      <section class="empty-state">
+        <div class="empty-img-wrapper">
+          <img src="./FUMTO.img/img.55.png" alt="빈 상태 이미지">
+        </div>
+        <h2 class="empty-title">아직 찜한 학원이 없어요</h2>
+        <div class="empty-desc">
+          <p>아이에게 맞는 미술학원을</p>
+          <p>지금부터 천천히 찾아보세요</p>
+        </div>
+      </section>
+
+      <!-- Explore Action -->
+      <section class="explore-action">
+        <button class="primary-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          학원 탐색하러 가기
+        </button>
+        <div class="sub-actions">
+          <button class="sub-btn">
+            <img src="./FUMTO.img/img.56.png" alt="인기 학원 보기" class="btn-icon-1">
+            <span>인기 학원 보기</span>
+          </button>
+          <button class="sub-btn">
+            <img src="./FUMTO.img/img.57.png" alt="연령별 추천 보기" class="btn-icon-2">
+            <span>연령별 추천 보기</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Info Box -->
+      <section class="info-section">
+        <div class="info-box">
+          <div class="info-icon-wrapper">
+            <div class="info-icon-bg"></div>
+            <div class="info-icon">
+              <img src="./FUMTO.img/img.58.png" alt="안내 아이콘">
+            </div>
+          </div>
+          <div class="info-text">
+            <p class="info-title">찜해두면 이런 점이 좋아요!</p>
+            <p class="info-desc">나중에 비교하기 쉽고, 상담 예약도 빠르게 할 수 있어요.</p>
+          </div>
+        </div>
+      </section>
+      
+      <div class="spacer-bottom"></div>
+    </main>
+
+    <!-- 하단 탭바 -->
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>홈</span>
+      </a>
+      <a href="save-academy.html" class="nav-item active">
+        <i class="fa-solid fa-heart"></i>
+        <span>찜</span>
+      </a>
+      <div class="nav-item-center">
+        <div class="fab-btn">
+          <i class="fa-solid fa-pen"></i>
+          <span class="fab-text">후기작성</span>
+        </div>
+      </div>
+      <a href="growth.html" class="nav-item">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>성장</span>
+      </a>
+      <a href="mypage.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>마이</span>
+      </a>
+    </nav>
+    <script>
+      (function() {
+        const isSaved = localStorage.getItem('pumto_isSaved') === 'true';
+        document.querySelectorAll('a').forEach(link => {
+          if (link.href.includes('save-academy.html') || link.href.includes('save.html')) {
+            const currentPath = window.location.pathname;
+            if (!currentPath.includes('save.html') && !currentPath.includes('save-academy.html')) {
+              link.href = isSaved ? 'save.html' : 'save-academy.html';
+            }
+          }
+        });
+      })();
+    </script>
+  </div>
+</body>
+</html>

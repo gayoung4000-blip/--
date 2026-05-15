@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체험 수업 예약 - 품토</title>
+  <link rel="stylesheet" href="class-reservation.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="reservation-container">
+    <!-- Header -->
+    <header class="reservation-header">
+      <div class="back-btn" onclick="history.back()">
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+      <h1 class="header-title">체험 수업 예약</h1>
+    </header>
+
+    <!-- Academy Info Card -->
+    <section class="academy-card">
+      <img src="./FUMTO.img/img.25.png" alt="그림공룡 미술학원" class="academy-img">
+      <div class="academy-info">
+        <h2 class="academy-name">그림공룡 미술학원</h2>
+        <div class="academy-address">
+          <img src="./FUMTO.img/img.45.png" alt="위치" class="address-icon">
+          <span class="address-text">서울 서초구 서초동 123-45</span>
+        </div>
+        <div class="academy-tags">
+          <span class="tag-class">유치부 A반</span>
+          <span class="tag-divider"></span>
+          <span class="tag-subject">창의 미술</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Date Selection -->
+    <section class="section-wrap">
+      <div class="section-title-wrap">
+        <img src="./FUMTO.img/img.47.png" alt="날짜" class="section-icon">
+        <h3 class="section-title">날짜 선택</h3>
+      </div>
+      <div class="calendar-card">
+        <div class="calendar-header">
+          <div class="current-month">2026년 4월</div>
+          <div class="calendar-nav">
+            <i class="fa-solid fa-chevron-left nav-btn prev"></i>
+            <i class="fa-solid fa-chevron-right nav-btn next"></i>
+          </div>
+        </div>
+        <div class="calendar-grid">
+          <div class="weekday">일</div>
+          <div class="weekday">월</div>
+          <div class="weekday">화</div>
+          <div class="weekday">수</div>
+          <div class="weekday">목</div>
+          <div class="weekday">금</div>
+          <div class="weekday">토</div>
+
+          <!-- Empty spaces for the start of the month (example: April 2026 starts on Wednesday) -->
+          <div class="date disabled"></div>
+          <div class="date disabled"></div>
+          <div class="date disabled"></div>
+          
+          <div class="date">1</div>
+          <div class="date">2</div>
+          <div class="date">3</div>
+          <div class="date">4</div>
+          <div class="date">5</div>
+          <div class="date">6</div>
+          <div class="date">7</div>
+          <div class="date">8</div>
+          <div class="date">9</div>
+          <div class="date">10</div>
+          <div class="date">11</div>
+          <div class="date">12</div>
+          <div class="date">13</div>
+          <div class="date">14</div>
+          <div class="date">15</div>
+          <div class="date">16</div>
+          <div class="date selected">17</div>
+          <div class="date">18</div>
+          <div class="date">19</div>
+          <div class="date">20</div>
+          <div class="date">21</div>
+          <div class="date">22</div>
+          <div class="date">23</div>
+          <div class="date">24</div>
+          <div class="date">25</div>
+          <div class="date">26</div>
+          <div class="date">27</div>
+          <div class="date">28</div>
+          <div class="date">29</div>
+          <div class="date">30</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Time Selection -->
+    <section class="section-wrap">
+      <div class="section-title-wrap">
+        <img src="./FUMTO.img/img.46.png" alt="시간" class="section-icon">
+        <h3 class="section-title">시간 선택</h3>
+      </div>
+      <div class="time-grid">
+        <div class="time-item disabled">10:00</div>
+        <div class="time-item">11:00</div>
+        <div class="time-item selected">14:00</div>
+        <div class="time-item">15:00</div>
+        <div class="time-item">16:00</div>
+        <div class="time-item disabled">17:00</div>
+      </div>
+      <div class="legend-wrap">
+        <div class="legend-item">
+          <span class="dot closed"></span>
+          마감
+        </div>
+        <div class="legend-item">
+          <span class="dot available"></span>
+          가능
+        </div>
+        <div class="legend-item">
+          <span class="dot selected"></span>
+          선택
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Bar -->
+    <footer class="bottom-bar">
+      <a href="reservation-fin.html" class="submit-btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">예약 확정하기</a>
+      <p class="submit-notice">예약 확정 전 선택한 날짜와 시간을 다시 확인해주세요.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PUMTO - 학원 목록</title>
+  <link rel="stylesheet" href="academy-index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+</head>
+<body>
+  <div class="mobile-container">
+
+    <!-- 상단 헤더 -->
+    <header class="ai-header">
+      <button class="back-btn" aria-label="뒤로가기" onclick="history.back()">
+        <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1L1 9L9 17" stroke="#FF9F46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="1" y1="9" x2="21" y2="9" stroke="#FF9F46" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <h1 class="ai-header-title">학원 목록</h1>
+      <div class="ai-header-right">
+        <button class="icon-btn" aria-label="지도 보기">
+          <i class="fa-regular fa-map"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- 결과 요약 + 정렬 -->
+    <div class="ai-summary-bar">
+      <p class="result-count">총 <strong>12개</strong> 학원</p>
+      <div class="sort-group">
+        <button class="sort-chip sort-chip-active">거리순</button>
+        <button class="sort-chip">인기순</button>
+        <button class="sort-chip">후기순</button>
+      </div>
+    </div>
+
+    <!-- 학원 카드 목록 -->
+    <main class="ai-list">
+
+      <!-- 카드 1 -->
+      <a href="art-academy.html" class="academy-card-link">
+        <article class="academy-card">
+          <img src="./FUMTO.img/img.25.png" alt="그림공룡 미술학원" class="card-thumb">
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-name">그림공룡 미술학원</h2>
+              <button class="wish-btn-card wish-btn-card-interactive wish-active" aria-label="찜하기">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <p class="card-info">도보 8분 &nbsp;|&nbsp; 월 180,000원~</p>
+            <div class="card-tags">
+              <span class="tag">놀이미술</span>
+              <span class="tag">토요일</span>
+              <span class="tag">5~7세</span>
+            </div>
+            <p class="card-review">
+              <i class="fa-solid fa-message"></i> 후기 6개
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <!-- 카드 2 -->
+      <a href="art-academy.html" class="academy-card-link">
+        <article class="academy-card">
+          <div class="card-thumb-wrap">
+            <img src="./FUMTO.img/img.26.png" alt="그림 아이 미술학원" class="card-thumb">
+            <span class="card-badge"><i class="fa-solid fa-circle-check"></i></span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-name">그림 아이 미술학원</h2>
+              <button class="wish-btn-card wish-active wish-btn-card-fixed" aria-label="찜하기">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <p class="card-info">도보 12분 &nbsp;|&nbsp; 월 200,000원~</p>
+            <div class="card-tags">
+              <span class="tag">이론중심</span>
+              <span class="tag">평일</span>
+              <span class="tag">8~10세</span>
+            </div>
+            <p class="card-review card-review-certified">
+              <i class="fa-solid fa-message"></i> 인증후기 12개
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <!-- 카드 3 -->
+      <a href="art-academy.html" class="academy-card-link">
+        <article class="academy-card">
+          <div class="card-thumb-wrap">
+            <img src="./FUMTO.img/img.27.png" alt="꿈꾸는 팔레트" class="card-thumb">
+            <span class="card-badge"><i class="fa-solid fa-circle-check"></i></span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-name">꿈꾸는 팔레트</h2>
+              <button class="wish-btn-card wish-active wish-btn-card-fixed" aria-label="찜하기">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <p class="card-info">도보 16분 &nbsp;|&nbsp; 월 150,000원~</p>
+            <div class="card-tags">
+              <span class="tag">창의미술</span>
+              <span class="tag">주2일</span>
+              <span class="tag">5~7세</span>
+            </div>
+            <p class="card-review card-review-certified">
+              <i class="fa-solid fa-message"></i> 인증후기 28개
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <!-- 카드 4 -->
+      <a href="art-academy.html" class="academy-card-link">
+        <article class="academy-card">
+          <div class="card-thumb-wrap">
+            <img src="./FUMTO.img/img.28.png" alt="늘품 미술학원" class="card-thumb">
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-name">늘품 미술학원</h2>
+              <button class="wish-btn-card" aria-label="찜하기">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <p class="card-info">도보 20분 &nbsp;|&nbsp; 월 220,000원~</p>
+            <div class="card-tags">
+              <span class="tag">창의+이론</span>
+              <span class="tag">주3일</span>
+              <span class="tag">5~10세</span>
+            </div>
+            <p class="card-review">
+              <i class="fa-solid fa-message"></i> 후기 8개
+            </p>
+          </div>
+        </article>
+      </a>
+
+    </main>
+
+    <!-- 플로팅 필터 버튼 -->
+    <a href="filter.html" class="floating-filter-btn" aria-label="필터">
+      <i class="fa-solid fa-sliders"></i>
+    </a>
+
+    <!-- 하단 탭바 -->
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>홈</span>
+      </a>
+      <a href="save-academy.html" class="nav-item">
+        <i class="fa-solid fa-heart"></i>
+        <span>찜</span>
+      </a>
+      <div class="nav-item-center">
+        <div class="fab-btn">
+          <i class="fa-solid fa-pen"></i>
+          <span class="fab-text">후기작성</span>
+        </div>
+      </div>
+      <a href="growth.html" class="nav-item">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>성장</span>
+      </a>
+      <a href="mypage.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>마이</span>
+      </a>
+    </nav>
+
+    <script>
+      // Function to update save links based on state
+      function updateSaveLinks() {
+        const isSaved = localStorage.getItem('pumto_isSaved') === 'true';
+        document.querySelectorAll('a').forEach(link => {
+          if (link.href.includes('save-academy.html') || link.href.includes('save.html')) {
+            const currentPath = window.location.pathname;
+            if (!currentPath.includes('save.html') && !currentPath.includes('save-academy.html')) {
+              link.href = isSaved ? 'save.html' : 'save-academy.html';
+            }
+          }
+        });
+      }
+
+      // Restore state on load
+      const savedState = localStorage.getItem('pumto_isSaved') === 'true';
+      const item1Btn = document.querySelector('.wish-btn-card-interactive');
+      if (item1Btn) {
+        const icon = item1Btn.querySelector('i');
+        if (savedState) {
+          icon.classList.replace('fa-regular', 'fa-solid');
+          item1Btn.classList.add('wish-active');
+        } else {
+          icon.classList.replace('fa-solid', 'fa-regular');
+          item1Btn.classList.remove('wish-active');
+        }
+      }
+
+      // Initialize links on load
+      updateSaveLinks();
+
+      // Item 1: Interactive toggle
+      document.querySelectorAll('.wish-btn-card-interactive').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const icon = btn.querySelector('i');
+          if (icon.classList.contains('fa-regular')) {
+            icon.classList.replace('fa-regular', 'fa-solid');
+            btn.classList.add('wish-active');
+          } else {
+            icon.classList.replace('fa-solid', 'fa-regular');
+            btn.classList.remove('wish-active');
+          }
+          
+          // Only Item 1 affects the navigation state switch for this demo
+          const isItem1Saved = icon.classList.contains('fa-solid');
+          localStorage.setItem('pumto_isSaved', isItem1Saved ? 'true' : 'false');
+          
+          updateSaveLinks();
+        });
+      });
+
+      // Items 2 & 3: Fixed state, prevent navigation
+      document.querySelectorAll('.wish-btn-card-fixed').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    </script>
+  </div>
+</body>
+</html>

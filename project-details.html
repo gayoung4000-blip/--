@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>품토 - 작품 상세</title>
+  <link rel="stylesheet" href="project-details.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <button class="back-btn" onclick="history.back()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h1 class="title">작품 상세</h1>
+      </div>
+      <div class="header-right">
+        <div class="status-badge private">
+          <i class="fa-solid fa-lock"></i> 비공개
+        </div>
+        <button class="share-btn"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Project Image Section -->
+      <section class="project-image-section">
+        <div class="image-wrapper">
+          <img src="./FUMTO.img/img.84.png" alt="작품 이미지" class="project-img">
+          <div class="image-overlay">
+            <div class="pagination">1 / 18</div>
+            <div class="project-info">
+              <div class="title-row">
+                <h2 class="project-title">햄버거 집</h2>
+                <i class="fa-regular fa-heart heart-icon"></i>
+              </div>
+              <p class="project-subtitle">우리 아이 상상력이 담긴 소중한 작품이에요.</p>
+              <div class="tags">
+                <span class="tag">유치부 A반</span>
+                <span class="tag">창의미술</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detailed Info Box -->
+      <section class="info-box-section">
+        <div class="info-box">
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-label">작품일</span>
+              <span class="stat-value">2026.03.20</span>
+            </div>
+            <div class="divider"></div>
+            <div class="stat-item">
+              <span class="stat-label">수업</span>
+              <span class="stat-value">창의미술</span>
+            </div>
+            <div class="divider"></div>
+            <div class="stat-item">
+              <span class="stat-label">반 / 연령</span>
+              <span class="stat-value">유치부 A반</span>
+            </div>
+          </div>
+          <div class="horizontal-divider"></div>
+          <div class="teacher-row">
+            <div class="teacher-info">
+              <div class="teacher-img-wrapper">
+                <img src="./FUMTO.img/img.83.png" alt="선생님 프로필">
+              </div>
+              <div class="teacher-text">
+                <span class="label">담당 선생님</span>
+                <span class="name">김미래 선생님</span>
+              </div>
+            </div>
+            <button class="profile-btn">선생님 프로필 <i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Materials Section -->
+      <section class="materials-section">
+        <div class="section-header">
+          <h3 class="section-title">사용된 재료</h3>
+          <button class="alert-link"><i class="fa-regular fa-bell"></i> 알림 받기</button>
+        </div>
+        <div class="material-tags">
+          <span class="tag green">스케치북</span>
+          <span class="tag orange">수채화 물감</span>
+          <span class="tag green">파레트</span>
+        </div>
+      </section>
+
+      <!-- CTA Button -->
+      <button class="cta-button">
+        <i class="fa-solid fa-pen"></i> 인증 후기 작성하기
+      </button>
+
+      <p class="cta-desc">우리 아이의 성장을 함께 기록하고 다른 부모님들과 공유해요.</p>
+
+      <!-- Navigation Section -->
+      <section class="navigation-section">
+        <div class="nav-card prev">
+          <div class="nav-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="nav-text">
+            <span class="nav-label">이전 작품</span>
+            <span class="nav-project-title">우리 동네 풍경</span>
+          </div>
+        </div>
+        <div class="v-divider"></div>
+        <div class="nav-card next">
+          <div class="nav-text">
+            <span class="nav-label">다음 작품</span>
+            <span class="nav-project-title">무지개 공룡</span>
+          </div>
+          <div class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </section>
+
+      <!-- Review Banner -->
+      <section class="review-banner">
+        <div class="banner-left">
+          <div class="camera-icon-wrapper">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+          <div class="banner-text">
+            <p class="main-text">우리 아이의 멋진 순간을 남겨보세요!</p>
+            <p class="sub-text">간단한 후기 작성으로 다른 부모님께도 도움이 돼요.</p>
+          </div>
+        </div>
+        <button class="banner-btn">후기 작성하기 <i class="fa-solid fa-chevron-right"></i></button>
+      </section>
+
+      <div class="spacer"></div>
+    </main>
+
+    <!-- Bottom Nav -->
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>홈</span>
+      </a>
+      <a href="save-academy.html" class="nav-item">
+        <i class="fa-solid fa-heart"></i>
+        <span>찜</span>
+      </a>
+      <div class="nav-item-center">
+        <div class="fab-btn">
+          <i class="fa-solid fa-pen"></i>
+          <span class="fab-text">후기작성</span>
+        </div>
+      </div>
+      <a href="growth.html" class="nav-item active">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>성장</span>
+      </a>
+      <a href="mypage.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>마이</span>
+      </a>
+    </nav>
+    <script>
+      (function() {
+        const isSaved = localStorage.getItem('pumto_isSaved') === 'true';
+        document.querySelectorAll('a').forEach(link => {
+          if (link.href.includes('save-academy.html') || link.href.includes('save.html')) {
+            const currentPath = window.location.pathname;
+            if (!currentPath.includes('save.html') && !currentPath.includes('save-academy.html')) {
+              link.href = isSaved ? 'save.html' : 'save-academy.html';
+            }
+          }
+        });
+      })();
+    </script>
+  </div>
+</body>
+</html>

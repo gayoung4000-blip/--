@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>품토 - 마이페이지</title>
+  <link rel="stylesheet" href="mypage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="mobile-container">
+    
+    <header class="header">
+      <button class="back-btn" onclick="history.back()">
+        <i class="fa-solid fa-arrow-left-long"></i>
+      </button>
+      <h1 class="title">마이페이지</h1>
+      <button class="icon-btn">
+        <i class="fa-solid fa-gear"></i>
+      </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Profile Section -->
+      <section class="profile-section">
+        <div class="profile-card">
+          <div class="profile-avatar-wrapper">
+            <div class="profile-avatar">
+              <img src="./FUMTO.img/img.61.png" alt="프로필 이미지">
+            </div>
+            <div class="edit-badge">
+              <i class="fa-solid fa-pencil"></i>
+            </div>
+          </div>
+          
+          <div class="profile-content">
+            <div class="profile-info">
+              <h2>소연님</h2>
+              <div class="email-row">
+                <i class="fa-solid fa-envelope email-icon"></i>
+                <p class="profile-email">soyeon2000@naver.com</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right profile-arrow"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kid Info Section -->
+      <section class="kid-section">
+        <div class="section-header">
+          <h2>아이 정보</h2>
+          <a href="#" class="manage-link">아이 관리 &gt;</a>
+        </div>
+        <div class="kid-cards">
+          <!-- Registered Kid Card -->
+          <div class="kid-card registered">
+            <div class="kid-card-content">
+              <img src="./FUMTO.img/img.62.png" alt="아이 프로필" class="kid-avatar">
+              <div class="kid-details">
+                <h3>김지우</h3>
+                <div class="kid-meta-row">
+                  <i class="fa-regular fa-user kid-icon"></i>
+                  <span class="kid-age">7세</span>
+                  <span class="divider"></span>
+                  <span class="kid-class">유치부 A반</span>
+                </div>
+                <div class="kid-recent-class">
+                  <span class="badge">최근 수업</span>
+                  <span class="date">2026.04.17</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Add Kid Card -->
+          <div class="kid-card add-kid">
+            <div class="add-icon">+</div>
+            <p>아이 추가</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reservation / Activity Section -->
+      <section class="activity-section">
+        <div class="section-header">
+          <h2>예약 / 활동</h2>
+        </div>
+        <div class="activity-cards">
+          <div class="activity-card">
+            <img src="./FUMTO.img/img.59.png" alt="예약 내역 이미지" class="activity-img">
+            <div class="activity-text">
+              <h3>예약 내역</h3>
+              <p>체험 수업 예약 현황을<br>확인해보세요.</p>
+            </div>
+          </div>
+          <div class="activity-card">
+            <img src="./FUMTO.img/img.60.png" alt="성장 기록 이미지" class="activity-img">
+            <div class="activity-text">
+              <h3>성장 기록</h3>
+              <p>아이의 수업 활동과 후기를<br>확인해보세요.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings Section -->
+      <section class="settings-section">
+        <div class="section-header">
+          <h2>설정</h2>
+        </div>
+        <ul class="settings-list">
+          <li class="setting-item">
+            <div class="setting-icon-wrapper">
+              <i class="fa-solid fa-bell setting-icon-fa"></i>
+            </div>
+            <div class="setting-info">
+              <h3>알림 설정</h3>
+              <p>예약, 수업 알림을 설정할 수 있어요.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+          </li>
+          <li class="setting-item">
+            <div class="setting-icon-wrapper">
+              <i class="fa-regular fa-user setting-icon-fa"></i>
+            </div>
+            <div class="setting-info">
+              <h3>계정 설정</h3>
+              <p>회원 정보 및 보안 설정을 관리해요.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+          </li>
+          <li class="setting-item">
+            <div class="setting-icon-wrapper">
+              <i class="fa-regular fa-circle-question setting-icon-fa"></i>
+            </div>
+            <div class="setting-info">
+              <h3>고객센터</h3>
+              <p>도움이 필요하신가요?</p>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+          </li>
+          <li class="setting-item">
+            <div class="setting-icon-wrapper">
+              <i class="fa-solid fa-circle-exclamation setting-icon-fa" style="background: transparent; -webkit-text-stroke: 1px white;"></i>
+            </div>
+            <div class="setting-info">
+              <h3>앱 정보</h3>
+              <p>버전 및 이용약관을 확인해요.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+          </li>
+        </ul>
+      </section>
+
+      <div class="spacer-bottom"></div>
+    </main>
+
+    <!-- 하단 탭바 -->
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>홈</span>
+      </a>
+      <a href="save-academy.html" class="nav-item">
+        <i class="fa-solid fa-heart"></i>
+        <span>찜</span>
+      </a>
+      <div class="nav-item-center">
+        <div class="fab-btn">
+          <i class="fa-solid fa-pen"></i>
+          <span class="fab-text">후기작성</span>
+        </div>
+      </div>
+      <a href="growth.html" class="nav-item">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>성장</span>
+      </a>
+      <a href="mypage.html" class="nav-item active">
+        <i class="fa-regular fa-user"></i>
+        <span>마이</span>
+      </a>
+    </nav>
+    <script>
+      (function() {
+        const isSaved = localStorage.getItem('pumto_isSaved') === 'true';
+        document.querySelectorAll('a').forEach(link => {
+          if (link.href.includes('save-academy.html') || link.href.includes('save.html')) {
+            const currentPath = window.location.pathname;
+            if (!currentPath.includes('save.html') && !currentPath.includes('save-academy.html')) {
+              link.href = isSaved ? 'save.html' : 'save-academy.html';
+            }
+          }
+        });
+      })();
+    </script>
+  </div>
+</body>
+</html>

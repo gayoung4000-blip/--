@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PUMTO - 저장</title>
+  <link rel="stylesheet" href="save.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- 헤더 -->
+    <header class="header">
+      <h1 class="title">저장</h1>
+      <button class="edit-btn">편집</button>
+    </header>
+
+    <main class="main-content">
+      <!-- 저장 상태 바 -->
+      <section class="save-status">
+        <div class="save-count">
+          <span class="dot"></span>
+          <span>3개 저장됨</span>
+        </div>
+        <div class="sort-options">
+          <button class="sort-btn active">최근순</button>
+          <button class="sort-btn">거리순</button>
+        </div>
+      </section>
+
+      <!-- 저장된 학원 리스트 -->
+      <section class="academy-list">
+        <!-- 학원 1 -->
+        <div class="academy-card">
+          <div class="img-wrapper">
+            <img src="./FUMTO.img/img.25.png" alt="그림공룡 미술학원">
+          </div>
+          <button class="wish-btn active"><i class="fa-solid fa-heart"></i></button>
+          <div class="card-info">
+            <h3 class="academy-name">그림공룡 미술학원</h3>
+            <p class="academy-location">
+              <i class="fa-solid fa-location-dot pin-icon"></i>
+              서울 서초구 서초동 123-45 · 도보 5분
+            </p>
+            <div class="tag-row">
+              <span class="tag orange">유치부 A반</span>
+              <span class="divider-line"></span>
+              <span class="tag gray">창의 미술</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 학원 2 -->
+        <div class="academy-card">
+          <div class="img-wrapper">
+            <img src="./FUMTO.img/img.54.png" alt="그림아이 미술학원">
+            <img src="./FUMTO.img/img.52.png" alt="인증 배지" class="verify-badge-img">
+          </div>
+          <button class="wish-btn active"><i class="fa-solid fa-heart"></i></button>
+          <div class="card-info">
+            <h3 class="academy-name">그림아이 미술학원</h3>
+            <p class="academy-location">
+              <i class="fa-solid fa-location-dot pin-icon"></i>
+              서울 서초구 방배동 234-12 · 도보 8분
+            </p>
+            <div class="tag-row">
+              <span class="tag orange">초등부 B반</span>
+              <span class="divider-line"></span>
+              <span class="tag gray">창의 미술</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 학원 3 -->
+        <div class="academy-card">
+          <div class="img-wrapper">
+            <img src="./FUMTO.img/img.53.png" alt="꿈꾸는 팔레트">
+            <img src="./FUMTO.img/img.52.png" alt="인증 배지" class="verify-badge-img">
+          </div>
+          <button class="wish-btn active"><i class="fa-solid fa-heart"></i></button>
+          <div class="card-info">
+            <h3 class="academy-name">꿈꾸는 팔레트</h3>
+            <p class="academy-location">
+              <i class="fa-solid fa-location-dot pin-icon"></i>
+              서울 서초구 서초동 98-76 · 도보 12분
+            </p>
+            <div class="tag-row">
+              <span class="tag orange">유치부 C반</span>
+              <span class="divider-line"></span>
+              <span class="tag gray">드로잉·회화</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 더 탐색하기 -->
+        <div class="explore-more">
+          <div class="explore-top-row">
+            <span class="plus-icon">+</span>
+            <span class="explore-title">더 탐색하기하고 저장하기</span>
+          </div>
+          <p class="explore-desc">마음에 드는 학원을 더 찾아보세요!</p>
+        </div>
+      </section>
+
+      <!-- 인증 안내 섹션 -->
+      <section class="certified-section">
+        <div class="certified-box">
+          <div class="cert-icon">
+            <img src="./FUMTO.img/img.52.png" alt="인증 아이콘">
+          </div>
+          <div class="cert-text">
+            <p class="cert-title"><span class="green">인증</span>된 학원이에요</p>
+            <p class="cert-desc">실제 수업 후기와 정보를 확인했어요.</p>
+          </div>
+          <div class="cert-arrow">></div>
+        </div>
+      </section>
+
+      <div class="spacer-bottom"></div>
+    </main>
+
+    <!-- 하단 탭바 -->
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>홈</span>
+      </a>
+      <a href="save.html" class="nav-item active">
+        <i class="fa-solid fa-heart"></i>
+        <span>찜</span>
+      </a>
+      <div class="nav-item-center">
+        <div class="fab-btn">
+          <i class="fa-solid fa-pen"></i>
+          <span class="fab-text">후기작성</span>
+        </div>
+      </div>
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>성장</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>마이</span>
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

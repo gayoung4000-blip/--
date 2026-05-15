@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PUMTO - 그림공룡 미술학원</title>
+  <link rel="stylesheet" href="academy-index.css">
+  <link rel="stylesheet" href="art-academy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+</head>
+<body>
+  <div class="mobile-container detail-container">
+
+    <!-- 상단 배너 및 뒤로가기 -->
+    <div class="top-banner-section">
+      <img src="./FUMTO.img/img.25.png" alt="학원 전경" class="top-banner-img">
+      <div class="banner-overlay">
+        <!-- 상단 상태바 시간 -->
+        <div class="status-bar">
+          <span class="status-time">10:40</span>
+        </div>
+        
+        <div class="top-controls">
+          <button class="circle-btn" aria-label="뒤로가기" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <div class="right-controls">
+            <button class="circle-btn wish-btn-detail" aria-label="찜하기">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <button class="circle-btn" aria-label="공유하기">
+              <i class="fa-solid fa-share-nodes"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="image-pagination">1/6</div>
+      </div>
+    </div>
+
+    <!-- 학원 기본 정보 -->
+    <section class="academy-basic-info">
+      <h1 class="detail-title">그림공룡 미술학원</h1>
+      <p class="detail-subtitle">예술적 감각을 키우는 미술 학원</p>
+      
+      <div class="rating-row">
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="score">5.0</span>
+        <span class="review-link">· <span class="underline">6개의 리뷰보기</span></span>
+      </div>
+
+      <div class="info-tags">
+        <span class="info-tag loc-tag"><i class="fa-solid fa-location-dot"></i> 성수동 1.2km</span>
+        <span class="info-tag pickup-tag"><i class="fa-solid fa-bus"></i> 픽업가능</span>
+      </div>
+
+      <div class="action-buttons-row">
+        <div class="action-btn-circle">
+          <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+          <span>전화</span>
+        </div>
+        <div class="action-btn-circle">
+          <div class="icon-circle"><i class="fa-regular fa-bookmark"></i></div>
+          <span>6</span>
+        </div>
+        <div class="action-btn-circle">
+          <div class="icon-circle"><i class="fa-solid fa-file-pen"></i></div>
+          <span>리뷰</span>
+        </div>
+        <div class="action-btn-circle">
+          <div class="icon-circle"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
+          <span>공유</span>
+        </div>
+      </div>
+
+      <a href="class-reservation.html" class="primary-btn green-btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">체험 예약하기</a>
+    </section>
+
+    <!-- 탭 메뉴 -->
+    <div class="sticky-tabs">
+      <a href="#instructor" class="tab active">강사소개</a>
+      <a href="#curriculum" class="tab">커리큘럼</a>
+      <a href="#gallery" class="tab">수업사진</a>
+      <a href="#reviews" class="tab">후기</a>
+      <a href="#summary" class="tab">요약</a>
+    </div>
+
+    <!-- 여백 분리선 -->
+    <div class="section-divider"></div>
+
+    <!-- 강사 소개 -->
+    <section id="instructor" class="detail-section">
+      <h2 class="section-title">강사 소개</h2>
+      
+      <div class="instructor-profile">
+        <div class="instructor-img-wrap">
+          <img src="./FUMTO.img/img.36.png" alt="김미래 선생님" class="instructor-img">
+        </div>
+        <div class="instructor-info">
+          <h3 class="instructor-name">김미래 선생님</h3>
+          <p class="instructor-subjects">기초 드로잉 · 수채화 · 취미미술</p>
+          <span class="cert-badge"><svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1"><path d="M1 3.5L3.5 6L9 1" stroke="#D97018" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 인증 강사</span>
+        </div>
+      </div>
+
+      <div class="quote-box">
+        <div class="quote-title">강사 한 줄 소개</div>
+        <p class="quote-text">"그림이 처음인 아이도 즐겁게 시작할 수 있도록<br>옆에서 차근차근 함께해요"</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box light-orange-bg">
+          <div class="stat-value orange-text">8년</div>
+          <div class="stat-label">강의 경력</div>
+        </div>
+        <div class="stat-box light-green-bg">
+          <div class="stat-value green-text">240+</div>
+          <div class="stat-label">수강생</div>
+        </div>
+        <div class="stat-box light-orange-bg">
+          <div class="stat-value orange-text">98%</div>
+          <div class="stat-label">재수강률</div>
+        </div>
+      </div>
+
+      <div class="section-subtitle-wrap mt-8">
+        <div class="v-line orange-bg"></div>
+        <h3 class="sub-title">경력 사항</h3>
+      </div>
+      
+      <ul class="timeline">
+        <li>
+          <div class="timeline-dot orange-bg"></div>
+          <div class="timeline-content">
+            <div class="timeline-date orange-text">2026 - 현재</div>
+            <div class="timeline-title">그림공룡 미술학원 전임 강사</div>
+            <div class="timeline-desc">기초 드로잉 · 수채화 · 취미미술 담당</div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-dot green-bg"></div>
+          <div class="timeline-content">
+            <div class="timeline-date green-text">2020 - 2022</div>
+            <div class="timeline-title">홍익대학교 미술대학원 졸업</div>
+            <div class="timeline-desc">서양화 전공 석사</div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-dot orange-bg"></div>
+          <div class="timeline-content">
+            <div class="timeline-date orange-text">2018 - 2020</div>
+            <div class="timeline-title">서울 문화센터 드로잉 강사</div>
+            <div class="timeline-desc">성인 취미미술 클래스 운영</div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-dot green-bg"></div>
+          <div class="timeline-content">
+            <div class="timeline-date green-text">2015</div>
+            <div class="timeline-title">홍익대학교 미술대학 졸업</div>
+            <div class="timeline-desc">서양화 전공 학사</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="section-subtitle-wrap mt-8">
+        <div class="v-line green-bg"></div>
+        <h3 class="sub-title">수업 스타일</h3>
+      </div>
+      <div class="style-box light-green-bg">
+        <div class="style-icon"><img src="./FUMTO.img/img.44.png" alt="icon"></div>
+        <div class="style-text">
+          <div class="style-title">친절하고 꼼꼼하게</div>
+          <div class="style-desc">처음이어도 어렵지 않아요</div>
+        </div>
+      </div>
+      <div class="style-box light-orange-bg">
+        <div class="style-icon"><img src="./FUMTO.img/img.29.png" alt="icon"></div>
+        <div class="style-text">
+          <div class="style-title">1:1 맞춤 피드백</div>
+          <div class="style-desc">개인 실력에 맞는 과제를 드려요</div>
+        </div>
+      </div>
+      <div class="style-box light-green-bg">
+        <div class="style-icon"><img src="./FUMTO.img/img.31.png" alt="icon"></div>
+        <div class="style-text">
+          <div class="style-title">재미있는 수업</div>
+          <div class="style-desc">매 수업마다 완성작을 가져가요</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 기초 드로잉 커리큘럼 -->
+    <section id="curriculum" class="detail-section">
+      <div class="section-header">
+        <h2 class="section-title">기초 드로잉 커리큘럼</h2>
+        <a href="#" class="view-all orange-text">전체보기 &gt;</a>
+      </div>
+      <div class="curriculum-list">
+        <div class="curriculum-item">
+          <div class="curriculum-num">01</div>
+          <div class="curriculum-text">
+            <strong>선과 형태 익히기</strong><br>
+            직선·곡선·기본 도형을 반복<br>
+            손의 감각과 힘 조절을 훈련<br>
+            연필 쥐는 법부터 차근차근 시작
+          </div>
+        </div>
+        <div class="curriculum-item">
+          <div class="curriculum-num">02</div>
+          <div class="curriculum-text">
+            <strong>명암과 질감 표현</strong><br>
+            빛이 닿는 방향에 따라 달라지는<br>
+            명암을 이해하고 표현<br>
+            종이·나무·천 등 다양한 질감도 연습
+          </div>
+        </div>
+        <div class="curriculum-item">
+          <div class="curriculum-num">03</div>
+          <div class="curriculum-text">
+            <strong>정물 드로잉 완성</strong><br>
+            실제 사물을 눈앞에 두고<br>
+            비례·원근·구도를 고려하며 그리기<br>
+            한 학기 첫 번째 나만의 작품을 완성
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 수업 현장 갤러리 -->
+    <section id="gallery" class="detail-section">
+      <h2 class="section-title">수업 현장 갤러리</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="./FUMTO.img/img.37.png" alt="갤러리1">
+        </div>
+        <div class="gallery-item">
+          <img src="./FUMTO.img/img.38.png" alt="갤러리2">
+        </div>
+        <div class="gallery-more">
+          <img src="./FUMTO.img/img.39.png" alt="갤러리3">
+          <div class="more-overlay">+ 4</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 수강생 리얼 후기 -->
+    <section id="reviews" class="detail-section bg-gray mt-6">
+      <h2 class="section-title">수강생 리얼 후기</h2>
+      
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar-wrap">
+            <img src="./FUMTO.img/img.41.png" alt="여니맘" class="review-avatar">
+          </div>
+          <div class="review-info">
+            <div class="review-name">여니맘</div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="review-content">
+          "아이가 집에 와서도 계속 그림을 그려요.<br>
+          학원 분위기도 따뜻하고 커리큘럼도 체계적이에요."
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar-wrap">
+            <img src="./FUMTO.img/img.41.png" alt="다희맘" class="review-avatar">
+          </div>
+          <div class="review-info">
+            <div class="review-name">다희맘</div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="review-content">
+          "수업 사진을 앱으로 바로 확인할 수 있어서<br>
+          아이가 뭘 배우는지 알 수 있어서 좋아요."
+        </div>
+      </div>
+
+      <div class="review-more-btn">
+        <span class="v-text">V</span>
+      </div>
+    </section>
+
+    <!-- 학원 요약 -->
+    <section id="summary" class="detail-section">
+      <h2 class="section-title">학원 요약</h2>
+      <div class="summary-top">
+        <div class="summary-box">
+          <div class="summary-value">5세-10세</div>
+        </div>
+        <div class="summary-box">
+          <div class="summary-value">미술</div>
+          <div class="summary-label">과목</div>
+        </div>
+      </div>
+
+      <div class="summary-table">
+        <div class="summary-row">
+          <div class="s-label">상세과목</div>
+          <div class="s-value">창의미술 | 그리기/회화 | 기초드로잉 | 이론</div>
+        </div>
+        <div class="summary-row">
+          <div class="s-label">수업유형</div>
+          <div class="s-value">소수 그룹</div>
+        </div>
+        <div class="summary-row">
+          <div class="s-label">픽업셔틀</div>
+          <div class="s-value">
+            <span class="fw-600">있음 / 하안북초, 하안북초 돌봄/늘봄<br>
+            구름산어린이집, 현대아파트 인프라어린이집</span><br>
+            <span class="text-gray text-small">*셔틀범위는 상담문의 가능</span>
+          </div>
+        </div>
+        <div class="summary-row">
+          <div class="s-label">체험수업</div>
+          <div class="s-value">
+            <span class="fw-600">있음 / 미술관수업 (한달 1회)<br>
+            슬기로운 수퍼파워 커리큘럼의 체험학습</span>
+          </div>
+        </div>
+        <div class="summary-row align-center">
+          <div class="s-label">학원위치</div>
+          <div class="s-value fw-600">집에서 <span class="orange-text">1.2km</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 비용 -->
+    <section id="fee" class="detail-section">
+      <h2 class="section-title">
+        <img src="./FUMTO.img/img.42.png" alt="icon" class="fee-icon">
+        비용
+      </h2>
+      <div class="fee-content">
+        <p class="fee-main">주2회, 1개월 120,000원</p>
+        <ul class="fee-notes">
+          <li>* 횟수제 운영</li>
+          <li>* 상담 요청 시 교육비 상세 안내</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 학원 정보 -->
+    <section class="detail-section pb-bottom">
+      <h2 class="section-title">학원 정보</h2>
+      <div class="info-table">
+        <div class="info-row">
+          <div class="i-label">학원주소</div>
+          <div class="i-value">경기 광명시 가림로 38 516동 206호</div>
+        </div>
+        <div class="info-row">
+          <div class="i-label">주차정보</div>
+          <div class="i-value">가능</div>
+        </div>
+        <div class="info-row">
+          <div class="i-label">운영시간</div>
+          <div class="i-value">
+            월요일 휴무<br>
+            화요일 14:00 ~ 20:00<br>
+            수요일 14:00 ~ 20:00<br>
+            목요일 14:00 ~ 20:00<br>
+            금요일 14:00 ~ 20:00<br>
+            토요일 14:00 ~ 20:00<br>
+            일요일 휴무
+          </div>
+        </div>
+        <div class="info-row align-center mt-6">
+          <div class="i-label">전화번호</div>
+          <div class="i-value info-action-row">
+            <div class="phone-pill">
+              <i class="fa-solid fa-phone"></i>
+              0508-0327-4854
+            </div>
+            <button class="copy-pill-btn">복사</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="map-area">
+        <img src="./FUMTO.img/img.40.png" alt="지도" class="map-img">
+        <div class="map-actions">
+          <button class="map-btn"><i class="fa-solid fa-location-arrow mr-1 text-gray"></i> 빠른 길찾기</button>
+          <div class="btn-divider"></div>
+          <button class="map-btn"><i class="fa-solid fa-map mr-1 text-gray"></i> 지도에서 보기</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 하단 고정 바 -->
+    <div class="bottom-action-bar">
+      <button class="wish-circle-btn">
+        <i class="fa-regular fa-bookmark"></i>
+        <span>6</span>
+      </button>
+      <a href="class-reservation.html" class="action-btn-half light-orange" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">
+        체험 수업 예약
+      </a>
+      <button class="action-btn-half solid-orange">
+        <i class="fa-solid fa-phone"></i> 전화하기
+      </button>
+    </div>
+
+    <script>
+      (function() {
+        // Update links based on state
+        function updateSaveLinks() {
+          const isSaved = localStorage.getItem('pumto_isSaved') === 'true';
+          document.querySelectorAll('a').forEach(link => {
+            if (link.href.includes('save-academy.html') || link.href.includes('save.html')) {
+              const currentPath = window.location.pathname;
+              if (!currentPath.includes('save.html') && !currentPath.includes('save-academy.html')) {
+                link.href = isSaved ? 'save.html' : 'save-academy.html';
+              }
+            }
+          });
+        }
+        updateSaveLinks();
+
+        // Heart toggle logic for detail page
+        const wishBtn = document.querySelector('.wish-btn-detail');
+        if (wishBtn) {
+          wishBtn.addEventListener('click', () => {
+            const icon = wishBtn.querySelector('i');
+            if (icon.classList.contains('fa-regular')) {
+              icon.classList.replace('fa-regular', 'fa-solid');
+              wishBtn.style.color = '#FF9F46';
+              localStorage.setItem('pumto_isSaved', 'true');
+            } else {
+              icon.classList.replace('fa-solid', 'fa-regular');
+              wishBtn.style.color = '#fff';
+              localStorage.setItem('pumto_isSaved', 'false');
+            }
+            updateSaveLinks();
+          });
+        }
+      })();
+    </script>
+  </div>
+</body>
+</html>

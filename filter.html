@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PUMTO - 필터</title>
+  <link rel="stylesheet" href="filter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+</head>
+<body>
+  <div class="mobile-container">
+
+    <!-- 상단 헤더 -->
+    <header class="filter-header">
+      <button class="back-btn" aria-label="뒤로가기" onclick="history.back()">
+        <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1L1 9L9 17" stroke="#FF9F46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1 9H21" stroke="#FF9F46" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <h1 class="filter-title">필터</h1>
+    </header>
+
+    <!-- 필터 본문 -->
+    <main class="filter-body">
+
+      <!-- 거리 -->
+      <section class="filter-section" id="section-distance">
+        <h2 class="section-label">거리</h2>
+        <div class="chip-group" data-type="single">
+          <button class="chip chip-active">도보 10분</button>
+          <button class="chip">15분</button>
+          <button class="chip">20분</button>
+          <button class="chip">30분+</button>
+        </div>
+        <div class="divider"></div>
+      </section>
+
+      <!-- 시간대 -->
+      <section class="filter-section" id="section-time">
+        <h2 class="section-label">시간대</h2>
+        <div class="chip-group" data-type="multiple">
+          <button class="chip">평일 오전</button>
+          <button class="chip">평일 오후</button>
+          <button class="chip chip-active">토요일</button>
+          <button class="chip">상관없음</button>
+        </div>
+        <div class="divider"></div>
+      </section>
+
+      <!-- 가격대 -->
+      <section class="filter-section" id="section-price">
+        <h2 class="section-label">가격대</h2>
+        <div class="range-container">
+          <div class="range-slider" id="price-slider">
+            <div class="range-track"></div>
+            <div class="range-fill" id="range-fill" style="left: 0%; right: 0%;"></div>
+            <div class="range-thumb thumb-left" id="thumb-left" style="left: 0%;"></div>
+            <div class="range-thumb thumb-right" id="thumb-right" style="left: 100%;"></div>
+          </div>
+          <div class="range-labels">
+            <span class="range-label" id="label-min">0만 원</span>
+            <span class="range-label" id="label-max">50만 원</span>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </section>
+
+      <!-- 커리큘럼 -->
+      <section class="filter-section" id="section-curriculum">
+        <h2 class="section-label">커리큘럼</h2>
+        <div class="chip-group" data-type="multiple">
+          <button class="chip">놀이미술</button>
+          <button class="chip chip-active">이론 중심</button>
+          <button class="chip">자유표현</button>
+        </div>
+        <div class="divider"></div>
+      </section>
+
+      <!-- 연령 -->
+      <section class="filter-section" id="section-age">
+        <h2 class="section-label">연령</h2>
+        <div class="chip-group" data-type="single">
+          <button class="chip">5세</button>
+          <button class="chip">6세</button>
+          <button class="chip chip-active">7세</button>
+          <button class="chip">8세</button>
+          <button class="chip">9세+</button>
+        </div>
+        <div class="divider"></div>
+      </section>
+
+      <!-- 셔틀 운행 학원만 -->
+      <section class="filter-section shuttle-section">
+        <h2 class="section-label">셔틀 운행 학원만</h2>
+        <label class="toggle-switch">
+          <input type="checkbox" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </section>
+
+    </main>
+
+    <!-- 하단 버튼 -->
+    <footer class="filter-footer">
+      <button class="btn-reset">초기화</button>
+      <button class="btn-apply">적용하기 (5)</button>
+    </footer>
+
+  </div>
+
+  <script>
+    // Chip toggle logic
+    document.querySelectorAll('.chip-group').forEach(group => {
+      const type = group.dataset.type;
+      group.addEventListener('click', e => {
+        const chip = e.target.closest('.chip');
+        if (!chip) return;
+
+        if (type === 'single') {
+          group.querySelectorAll('.chip').forEach(c => c.classList.remove('chip-active'));
+          chip.classList.add('chip-active');
+        } else {
+          chip.classList.toggle('chip-active');
+        }
+        updateApplyButton();
+      });
+    });
+
+    // Toggle switch logic
+    const shuttleToggle = document.querySelector('.toggle-switch input');
+    shuttleToggle.addEventListener('change', () => {
+      updateApplyButton();
+    });
+
+    // Range Slider Logic
+    const slider = document.getElementById('price-slider');
+    const thumbLeft = document.getElementById('thumb-left');
+    const thumbRight = document.getElementById('thumb-right');
+    const fill = document.getElementById('range-fill');
+    const labelMin = document.getElementById('label-min');
+    const labelMax = document.getElementById('label-max');
+
+    let minVal = 0;
+    let maxVal = 100;
+    const maxPrice = 50; // 50만 원
+
+    function updateSlider() {
+      thumbLeft.style.left = minVal + '%';
+      thumbRight.style.left = maxVal + '%';
+      fill.style.left = minVal + '%';
+      fill.style.right = (100 - maxVal) + '%';
+      
+      labelMin.textContent = Math.round((minVal / 100) * maxPrice) + '만 원';
+      labelMax.textContent = Math.round((maxVal / 100) * maxPrice) + '만 원';
+    }
+
+    function handleDrag(e, type) {
+      const rect = slider.getBoundingClientRect();
+      const moveHandler = (moveEvent) => {
+        const clientX = moveEvent.touches ? moveEvent.touches[0].clientX : moveEvent.clientX;
+        let percent = ((clientX - rect.left) / rect.width) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+
+        if (type === 'left') {
+          if (percent < maxVal - 5) {
+            minVal = percent;
+          }
+        } else {
+          if (percent > minVal + 5) {
+            maxVal = percent;
+          }
+        }
+        updateSlider();
+      };
+
+      const upHandler = () => {
+        document.removeEventListener('mousemove', moveHandler);
+        document.removeEventListener('mouseup', upHandler);
+        document.removeEventListener('touchmove', moveHandler);
+        document.removeEventListener('touchend', upHandler);
+        updateApplyButton();
+      };
+
+      document.addEventListener('mousemove', moveHandler);
+      document.addEventListener('mouseup', upHandler);
+      document.addEventListener('touchmove', moveHandler, { passive: false });
+      document.addEventListener('touchend', upHandler);
+    }
+
+    thumbLeft.addEventListener('mousedown', (e) => handleDrag(e, 'left'));
+    thumbRight.addEventListener('mousedown', (e) => handleDrag(e, 'right'));
+    thumbLeft.addEventListener('touchstart', (e) => handleDrag(e, 'left'), { passive: false });
+    thumbRight.addEventListener('touchstart', (e) => handleDrag(e, 'right'), { passive: false });
+
+    // Initial load
+    minVal = 20;
+    maxVal = 60;
+    updateSlider();
+
+    function updateApplyButton() {
+      const activeChips = document.querySelectorAll('.chip-active').length;
+      const shuttleActive = shuttleToggle.checked ? 1 : 0;
+      const count = activeChips + shuttleActive + 2; 
+      document.querySelector('.btn-apply').textContent = `적용하기 (${count})`;
+    }
+
+    // Reset logic
+    document.querySelector('.btn-reset').addEventListener('click', () => {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('chip-active'));
+      shuttleToggle.checked = false;
+      document.querySelector('#section-distance .chip:first-child').classList.add('chip-active');
+      document.querySelector('#section-age .chip:nth-child(3)').classList.add('chip-active');
+      minVal = 0;
+      maxVal = 100;
+      updateSlider();
+      updateApplyButton();
+    });
+  </script>
+</body>
+</html>

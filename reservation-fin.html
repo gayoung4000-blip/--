@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예약 완료 - 품토</title>
+  <link rel="stylesheet" href="reservation-fin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="fin-container">
+    <!-- Header -->
+    <header class="fin-header">
+      <h1 class="header-title">예약 완료</h1>
+    </header>
+
+    <!-- Success Visual -->
+    <section class="success-visual-wrap">
+      <div class="success-graphic-container">
+        <img src="./FUMTO.img/img.51.png" alt="성공" class="success-graphic">
+      </div>
+      <div class="success-message">
+        <h2 class="msg-main">체험 수업 <span>예약이 완료</span>되었어요!</h2>
+        <p class="msg-sub">선생님과 아이에게 특별한 시간이 될 거예요</p>
+      </div>
+    </section>
+
+    <!-- Reservation Info Card -->
+    <section class="info-card">
+      <h3 class="card-title">예약 정보</h3>
+      
+      <div class="academy-mini-card">
+        <img src="./FUMTO.img/img.25.png" alt="그림공룡 미술학원" class="mini-img">
+        <div class="mini-info">
+          <h4 class="mini-name">그림공룡 미술학원</h4>
+          <div class="mini-address-row">
+            <img src="./FUMTO.img/img.45.png" alt="위치" class="mini-icon">
+            서울 서초구 서초동 123-45
+          </div>
+          <div class="mini-tags">
+            <span class="mini-tag-pill">유치부 A반</span>
+            <span class="mini-tag-divider"></span>
+            <span class="mini-tag-text">창의 미술</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-line"></div>
+
+      <div class="detail-table">
+        <div class="detail-row">
+          <div class="detail-label-wrap">
+            <img src="./FUMTO.img/img.47.png" alt="날짜" class="detail-icon">
+            <span class="detail-label">수업 날짜</span>
+          </div>
+          <span class="detail-value">2026년 4월 17일 (금)</span>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label-wrap">
+            <img src="./FUMTO.img/img.46.png" alt="시간" class="detail-icon">
+            <span class="detail-label">수업 시간</span>
+          </div>
+          <span class="detail-value">14:00 ~ 15:00</span>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label-wrap">
+            <img src="./FUMTO.img/img.48.png" alt="선생님" class="detail-icon">
+            <span class="detail-label">담당 선생님</span>
+          </div>
+          <span class="detail-value">김미래 선생님</span>
+        </div>
+        <div class="detail-row contact-row">
+          <div class="detail-label-wrap">
+            <img src="./FUMTO.img/img.50.png" alt="연락처" class="detail-icon contact-icon">
+            <span class="detail-label">연락처</span>
+          </div>
+          <span class="detail-value">010-1234-5678</span>
+        </div>
+      </div>
+
+      <!-- Status Bar -->
+      <div class="status-bar">
+        <div class="status-left">
+          <i class="fa-regular fa-circle-check status-check-icon" style="color: #89C143; font-size: 14px;"></i>
+          <span class="status-text">예약 확인 문자가 발송되었습니다.</span>
+        </div>
+        <a href="#" class="status-resend">다시 받기 ></a>
+      </div>
+    </section>
+
+    <!-- Notification Settings -->
+    <section class="notification-section">
+      <div class="notif-title-wrap">
+        <img src="./FUMTO.img/img.49.png" alt="알림" class="notif-icon">
+        <h3 class="notif-title">알림 설정</h3>
+      </div>
+      <div class="notif-grid">
+        <div class="notif-card">
+          <div class="notif-info">
+            <img src="./FUMTO.img/img.49.png" alt="알림" class="notif-bell">
+            <div class="notif-text-wrap">
+              <span class="notif-main-text">수업 하루 전 알림</span>
+            </div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="notif-card">
+          <div class="notif-info">
+            <img src="./FUMTO.img/img.49.png" alt="알림" class="notif-bell">
+            <div class="notif-text-wrap">
+              <span class="notif-main-text">수업 1시간 전 알림</span>
+            </div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button class="btn-check">예약 내역 확인하기</button>
+      <button class="btn-main" onclick="location.href='home.html'">메인으로 돌아가기</button>
+    </div>
+
+    <!-- 하단 탭바 -->
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>홈</span>
+      </a>
+      <a href="save-academy.html" class="nav-item">
+        <i class="fa-solid fa-heart"></i>
+        <span>찜</span>
+      </a>
+      <div class="nav-item-center">
+        <div class="fab-btn">
+          <i class="fa-solid fa-pen"></i>
+          <span class="fab-text">후기작성</span>
+        </div>
+      </div>
+      <a href="growth.html" class="nav-item">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>성장</span>
+      </a>
+      <a href="mypage.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>마이</span>
+      </a>
+    </nav>
+    <script>
+      (function() {
+        const isSaved = localStorage.getItem('pumto_isSaved') === 'true';
+        document.querySelectorAll('a').forEach(link => {
+          if (link.href.includes('save-academy.html') || link.href.includes('save.html')) {
+            const currentPath = window.location.pathname;
+            if (!currentPath.includes('save.html') && !currentPath.includes('save-academy.html')) {
+              link.href = isSaved ? 'save.html' : 'save-academy.html';
+            }
+          }
+        });
+      })();
+    </script>
+  </div>
+</body>
+</html>

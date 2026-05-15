@@ -1,0 +1,177 @@
+@font-face {
+  font-family: 'HakgyoansimAllimjang';
+  src: url('./font.file/학교안심 알림장/Hakgyoansim Allimjang TTF R.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HakgyoansimAllimjang';
+  src: url('./font.file/학교안심 알림장/Hakgyoansim Allimjang TTF B.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: 'HakgyoansimAllimjang', sans-serif;
+    overflow: hidden;
+}
+
+.mobile-container {
+    width: 100%;
+    max-width: 393px;
+    height: 100%;
+    background-color: #ff9f46; /* 오렌지 테마색 */
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* ── 흰색 언덕: intro-blue/green과 동일한 값 ── */
+.white-bg-hill {
+    position: absolute;
+    bottom: -15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+    height: 60vh;
+    background-color: #FFFFFF;
+    border-radius: 50% 50% 0 0;
+    z-index: 1;
+}
+
+/* ── 타이틀: 상단 오렌지 영역 ── */
+.title-section {
+    position: absolute;
+    top: 14vh;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.main-title {
+    color: #FFFFFF;
+    font-size: clamp(22px, 8vw, 28px);
+    line-height: 1.3;
+    letter-spacing: -0.64px;
+    font-weight: 400;
+}
+
+/* ── 일러스트 영역: 캐릭터 + 지도 말풍선 ── */
+.illustration-section {
+    position: absolute;
+    bottom: 40vh; /* 언덕 위에 걸치도록 */
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* 캐릭터 (img.89) - 왼쪽에 위치 */
+.char-illust {
+    width: clamp(140px, 42%, 170px);
+    height: auto;
+    position: relative;
+    margin-bottom: 120px; /* 60px 더 위로 */
+    margin-bottom: 120px; /* 60px 더 위로 */
+    transform: translateX(25px); /* 아주 미세하게 왼쪽으로 */
+    z-index: 5;
+}
+
+/* 지도 말풍선 (img.90) - 오른쪽 상단에 위치 */
+.map-illust {
+    width: clamp(145px, 42%, 180px); /* 크기 확대 */
+    height: auto;
+    position: relative;
+    margin-left: -280px;
+    margin-bottom: -25px; /* 조금 더 아래로 */
+    z-index: 6;
+}
+
+/* ── 하단 콘텐츠: 흰색 영역 (버튼 2개) ── */
+.bottom-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 41vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 70px 5vh 70px;
+    gap: 0;
+    z-index: 10;
+}
+
+.indicator {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 3vh;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #E0E0E0;
+    border-radius: 50%;
+}
+
+.dot.active {
+    width: 34px;
+    background-color: #ff9f46; /* 오렌지 테마색 */
+    border-radius: 5px;
+}
+
+/* "나중에 설정" 버튼 - 회색 배경 */
+.btn-later {
+    width: 100%;
+    height: clamp(30px, 6vh, 50px); /* 대폭 축소하여 확인 */
+    background-color: #F0F0F0;
+    color: #C3C3C3;
+    border: none;
+    border-radius: 30px;
+    font-size: clamp(16px, 6vw, 22px); 
+    font-weight: 400;
+    cursor: pointer;
+    font-family: 'HakgyoansimAllimjang', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+
+/* "위치 권한 허용" 버튼 - 오렌지 배경 */
+.btn-allow {
+    width: 100%;
+    height: clamp(30px, 6vh, 50px); /* 대폭 축소하여 확인 */
+    background-color: #ff9f46;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    font-size: clamp(16px, 6vw, 22px); 
+    font-weight: 400;
+    cursor: pointer;
+    font-family: 'HakgyoansimAllimjang', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-later:active,
+.btn-allow:active {
+    opacity: 0.8;
+}

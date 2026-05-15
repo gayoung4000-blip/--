@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>품토 - 성장 기록</title>
+  <link rel="stylesheet" href="growth.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">성장 기록</h1>
+      <button class="settings-btn"><i class="fa-solid fa-gear"></i></button>
+    </header>
+
+    <!-- Profile Card -->
+    <section class="profile-card">
+      <div class="profile-img-wrapper">
+        <img src="./FUMTO.img/img.82.png" alt="김지우 프로필" class="profile-img">
+      </div>
+      <div class="profile-info">
+        <h2 class="user-name">김지우</h2>
+        <p class="user-desc">유지부 7세</p>
+      </div>
+      <div class="status-badge private">
+        <i class="fa-solid fa-lock"></i> 비공개
+      </div>
+    </section>
+
+    <!-- Date Selector -->
+    <section class="date-selector">
+      <button class="arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
+      <span class="current-date">2026년 3월</span>
+      <button class="arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stat-box">
+        <p class="stat-label">완성작</p>
+        <p class="stat-value">12</p>
+      </div>
+      <div class="stat-box">
+        <p class="stat-label">출석일</p>
+        <p class="stat-value">20</p>
+      </div>
+      <div class="stat-box">
+        <p class="stat-label">성장 지수</p>
+        <p class="stat-value">98</p>
+      </div>
+    </section>
+
+    <!-- Notice Banner -->
+    <section class="notice-banner">
+      <div class="notice-icon">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+      <div class="notice-content">
+        <p class="notice-text">이번 주 미술 준비물을 확인하세요!</p>
+        <div class="notice-tags">
+          <span class="tag">스케치북</span>
+          <span class="tag">수채화 물감</span>
+          <span class="tag">파레트</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="gallery-header">
+        <h3 class="gallery-title">이달의 갤러리</h3>
+        <button class="view-all">전체보기</button>
+      </div>
+      <div class="gallery-grid">
+        <a href="project-details.html" class="gallery-item">
+          <img src="./FUMTO.img/img.81.png" alt="작품 1">
+        </a>
+        <a href="project-details.html" class="gallery-item">
+          <img src="./FUMTO.img/img.80.png" alt="작품 2">
+        </a>
+        <a href="project-details.html" class="gallery-item">
+          <img src="./FUMTO.img/img.79.png" alt="작품 3">
+        </a>
+        <a href="project-details.html" class="gallery-item">
+          <img src="./FUMTO.img/img.77.png" alt="작품 4">
+        </a>
+        <a href="project-details.html" class="gallery-item">
+          <img src="./FUMTO.img/img.78.png" alt="작품 5">
+        </a>
+        <div class="gallery-item add-item">
+          <div class="add-btn">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span>추가</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Nav -->
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>홈</span>
+      </a>
+      <a href="save-academy.html" class="nav-item">
+        <i class="fa-solid fa-heart"></i>
+        <span>찜</span>
+      </a>
+      <div class="nav-item-center">
+        <div class="fab-btn">
+          <i class="fa-solid fa-pen"></i>
+          <span class="fab-text">후기작성</span>
+        </div>
+      </div>
+      <a href="growth.html" class="nav-item active">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>성장</span>
+      </a>
+      <a href="mypage.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>마이</span>
+      </a>
+    </nav>
+    <script>
+      (function() {
+        const isSaved = localStorage.getItem('pumto_isSaved') === 'true';
+        document.querySelectorAll('a').forEach(link => {
+          if (link.href.includes('save-academy.html') || link.href.includes('save.html')) {
+            const currentPath = window.location.pathname;
+            if (!currentPath.includes('save.html') && !currentPath.includes('save-academy.html')) {
+              link.href = isSaved ? 'save.html' : 'save-academy.html';
+            }
+          }
+        });
+      })();
+    </script>
+  </div>
+</body>
+</html>

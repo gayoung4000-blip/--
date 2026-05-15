@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PUMTO - 온보딩</title>
+    <link rel="stylesheet" href="intro-green.css?v=5">
+</head>
+<body>
+    <div class="mobile-container">
+
+        <!-- 흰색 언덕 배경 -->
+        <div class="white-bg-hill"></div>
+
+        <!-- 타이틀 (상단 그린 영역) -->
+        <div class="title-section">
+            <h2 class="main-title">아이 정보를 입력해주세요.</h2>
+        </div>
+
+        <!-- 캐릭터 (언덕 꼭대기에 걸침) -->
+        <div class="illustration-section">
+            <img src="./FUMTO.img/img.88.png" alt="아이 캐릭터" class="main-illust">
+        </div>
+
+        <!-- 하단 콘텐츠 (흰색 영역) -->
+        <div class="bottom-content">
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <input type="text" placeholder="아이 이름" class="info-input">
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="나이 선택" class="info-input" readonly>
+                </div>
+            </div>
+
+            <div class="indicator">
+                <span class="dot"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+            <button class="btn-next" onclick="location.href='intro-orange.html'">다음</button>
+        </div>
+
+    </div>
+</body>
+</html>

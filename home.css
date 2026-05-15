@@ -1,0 +1,924 @@
+@font-face {
+  font-family: 'HakgyoansimAllimjang';
+  src: url('./font.file/학교안심 알림장/Hakgyoansim Allimjang TTF R.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HakgyoansimAllimjang';
+  src: url('./font.file/학교안심 알림장/Hakgyoansim Allimjang TTF B.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --primary: #FF9F46;
+  --text-dark: #272727;
+  --text-gray: #919191;
+  --bg-orange-light: #FEF3DF;
+  --bg-green-light: #F4F7E9;
+  --bg-green-solid: #EAF0D8;
+  --green: #89C143;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  color: var(--text-dark);
+}
+
+.mobile-container {
+  width: 100%;
+  max-width: 393px;
+  margin: 0 auto;
+  background-color: #fff;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+}
+
+.logo {
+  font-family: 'HakgyoansimAllimjang', 'Pretendard', sans-serif;
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.bell-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333;
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  background-color: #FF5A5A;
+  border-radius: 50%;
+}
+
+.main-content {
+  padding-bottom: 90px;
+}
+
+/* Main Banner */
+.main-banner {
+  margin: 0 20px;
+  height: 200px;
+  background-color: #FFF8EC;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+}
+
+/* 이미지1: 왼쪽 하단 초록색 장식 */
+.blob-1 {
+  bottom: -45px;
+  left: -15px;
+  height: 160px;
+}
+
+/* 이미지2: 이미지18 왼쪽에 위치 */
+.blob-2 {
+  bottom: -45px;
+  right: 85px;
+  height: 110px;
+}
+
+/* 이미지3: 맨 오른쪽 벽과 바닥에 붙기 */
+.blob-3 {
+  bottom: -35px;
+  right: -30px;
+  height: 140px;
+}
+
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.text-line-1 {
+  font-family: 'HakgyoansimAllimjang', 'Pretendard', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.text-line-2 {
+  font-family: 'HakgyoansimAllimjang', 'Pretendard', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.text-line-3 {
+  font-family: 'HakgyoansimAllimjang', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.banner-char {
+  position: absolute;
+  right: 15px;
+  bottom: -15px;
+  height: 185px;
+  z-index: 2;
+}
+
+/* Search Section */
+.search-section {
+  padding: 20px;
+  margin-top: -10px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e3e3e3;
+  border-radius: 30px;
+  height: 44px;
+  padding: 0 15px;
+  background-color: #fff;
+}
+
+.search-icon {
+  color: #919191;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.search-placeholder {
+  flex: 1;
+  font-size: 12px;
+  color: #919191;
+}
+
+.divider {
+  width: 1px;
+  height: 16px;
+  background-color: #e3e3e3;
+  margin: 0 10px;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #919191;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Category Menu */
+.category-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: -10px 20px 66px; /* 30px -> 66px로 수정하여 실제 간격 56px 확보 */
+  padding: 18px 8px;
+  border: 1px solid #E8E8E8;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.menu-icon-wrapper {
+  position: relative;
+  width: 66px;
+  height: 66px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  background-color: rgba(213, 234, 183, 0.4); /* #D5EAB7 at 40% opacity */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.menu-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.menu-img.lg-icon {
+  width: 76px;
+  height: 76px;
+}
+
+.menu-img.img-item-5 {
+  width: 88px;
+  height: 88px;
+  margin-top: 3px;
+}
+
+.menu-img.img-item-4 {
+  margin-top: 4px; /* 밑으로 아주 조금 이동 */
+}
+
+.menu-img.img-item-6 {
+  width: 82px;
+  height: 82px;
+  margin-top: 4px;
+  margin-left: -2px; /* 왼쪽으로 아주 약간 이동 */
+}
+
+.menu-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  letter-spacing: -0.3px;
+}
+
+.menu-desc {
+  font-size: 9px;
+  color: #999999;
+  white-space: nowrap;
+  letter-spacing: -0.3px;
+}
+
+/* Sections Common */
+.section-container {
+  padding: 0 0 30px 20px; /* Right padding handled by scrollable lists */
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+
+.section-title {
+  font-family: 'HakgyoansimAllimjang', 'Pretendard', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: -0.3px;
+  margin-bottom: 0;
+}
+
+.section-container > .section-title {
+  margin-bottom: 10px;
+}
+
+.view-more {
+  font-size: 11px;
+  color: #888;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-right: 20px;
+}
+
+/* Scrollable Lists */
+.card-scroll-list {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-right: 20px;
+  padding-bottom: 10px; /* For shadow/scrollbar */
+  scroll-snap-type: x mandatory;
+}
+
+.card-scroll-list::-webkit-scrollbar {
+  display: none;
+}
+
+.age-recommendation {
+  margin-top: -10px;
+  margin-bottom: 46px; /* 56px -> 46px로 10px 줄임 */
+}
+
+.age-recommendation .card-scroll-list {
+  gap: 8px;
+}
+
+
+
+/* Age Cards */
+.age-card {
+  flex: 1;
+  min-width: 0;
+  height: 145px;
+  border-radius: 16px;
+  padding: 18px 12px 12px 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bg-card-yellow { background-color: #FFF4E5; }
+.bg-card-green { background-color: #F1F7E8; }
+.bg-card-blue { background-color: #EDF6F5; }
+
+.age-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 30px;
+  font-size: 9px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin-left: -4px;
+  white-space: nowrap;
+  transform: translateY(-1px);
+}
+
+.badge-orange { background-color: #FFE6CA; color: #FF8A00; }
+.badge-green { background-color: #E2ECD4; color: #78A53A; }
+.badge-blue { background-color: #DCEBE8; color: #4FA89B; }
+
+.card-title {
+  font-family: 'HakgyoansimAllimjang', 'Pretendard', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #222;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 2;
+  word-break: keep-all;
+  margin-left: -2px;
+}
+
+.card-img {
+  position: absolute;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.img-age-9 {
+  left: -12px;
+  bottom: -22px;
+  right: auto;
+  top: auto;
+  height: 128px;
+}
+
+.img-age-10 {
+  right: -15px;
+  bottom: -60px;
+  height: 178px;
+}
+
+.img-age-11 {
+  right: -2px;
+  bottom: -30px;
+  height: 115px;
+}
+
+/* Academy Cards (No scroll, 3 items fit in screen) */
+.popular-academy {
+  margin-top: -15px;
+}
+
+.popular-academy .card-scroll-list {
+  gap: 8px;
+}
+
+.academy-card {
+  flex: 0 0 280px; /* Increased width to show roughly one card */
+  min-width: 280px;
+  border: 1px solid #EBEBEB;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  scroll-snap-align: start;
+  margin-left: 0;
+}
+
+.img-wrapper {
+  position: relative;
+  height: 160px; /* Increased height for better visual impact */
+  background-color: #f9f9f9;
+  display: block;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast; /* 선명도 개선 */
+  filter: contrast(1.02); /* 미세한 대비 증가로 더 선명하게 보이게 함 */
+}
+
+.hot-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.wish-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  cursor: pointer;
+  color: #b0b0b0;
+  font-size: 12px;
+  padding: 0;
+  line-height: 1;
+}
+
+.wish-btn i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-info {
+  padding: 12px 12px;
+}
+
+.academy-name {
+  font-size: 15px; /* Increased from 8px */
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.rating-row i {
+  font-size: 12px;
+  color: #FF9F46;
+}
+
+.rating-score {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.rating-count {
+  font-size: 12px;
+  color: #888;
+}
+
+.trial-badge {
+  background-color: #FFF2E5;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: 6px;
+  margin-left: 4px;
+}
+
+.academy-location {
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.divider-dot {
+  color: #ddd;
+  font-weight: 300;
+  margin: 0 4px;
+}
+
+/* Trial Banner */
+.trial-banner {
+  margin: -9px 20px 30px; /* -29px -> -9px로 20px 늘림 (실제 간격 21px) */
+  background-color: #F8FAF1;
+  border-radius: 20px;
+  padding: 12px 20px 5px 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 145px;
+  overflow: visible;
+}
+
+.trial-text {
+  flex: 1;
+  position: relative;
+  z-index: 3;
+  padding-top: 5px;
+}
+
+.trial-title {
+  font-family: 'HakgyoansimAllimjang', 'Pretendard', sans-serif;
+  font-size: 14px; /* 16px -> 14px (2px 감소) */
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.title-sub {
+  font-weight: 500;
+  color: #222;
+}
+
+.title-main {
+  color: #FF9F46;
+  font-weight: 700;
+}
+
+.trial-desc {
+  font-size: 10px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.trial-btn {
+  background-color: #FF9F46;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 6px 16px; /* 크기 추가 축소 */
+  font-size: 14px; /* 16px -> 14px (2px 감소) */
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.trial-img-board {
+  position: absolute;
+  right: 120px;
+  bottom: 53px;
+  height: 145px;
+  z-index: 1;
+}
+
+.trial-img-pencil {
+  position: absolute;
+  right: 15px;
+  bottom: -22px;
+  height: 152px;
+  z-index: 2;
+}
+
+/* Map Section */
+.map-section {
+  margin: 0px 20px 30px; /* -15px -> 0px로 15px 늘림 (실제 간격 30px) */
+}
+
+.map-container {
+  position: relative;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #cdcdcd;
+}
+
+.map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Map Markers */
+.map-marker {
+  position: absolute;
+  z-index: 5;
+}
+
+.map-marker.gray-1,
+.map-marker.gray-2,
+.map-marker.gray-3 {
+  width: 18px;
+  height: 18px;
+  background-color: rgba(140, 140, 140, 0.8);
+  border: 2px solid #555;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.gray-1 { top: 49%; left: calc(29% - 20px); }
+.gray-2 { top: 48%; left: 56%; }
+.gray-3 { top: 20%; left: 77%; }
+
+.map-marker-pin {
+  position: absolute;
+  width: 58px;
+  height: auto;
+  z-index: 6;
+  top: 32%;
+  left: 58%;
+}
+
+.map-list-btn {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  background-color: #fff;
+  border: none;
+  border-radius: 35px;
+  padding: 12px 22px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.map-list-btn i {
+  color: #FF9F46;
+  font-size: 14px;
+}
+
+/* Product Banner Section */
+.product-banner-section {
+  padding-right: 20px;
+  margin-top: 61px; /* 내부 .section-header의 -5px 마진을 고려하여 61px로 설정 (실제 간격 56px) */
+}
+
+.product-banner-section .section-header {
+  margin-bottom: 14px;
+}
+
+.product-banner-section .section-title {
+  font-family: 'HakgyoansimAllimjang', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #272727;
+  letter-spacing: -0.4px;
+  line-height: 1.3;
+}
+
+.product-banner-section .view-more {
+  font-size: 18px;
+  color: #272727;
+}
+
+.sale-banner {
+  display: block;
+  position: relative;
+  width: 353px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.sale-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+.product-footer {
+  padding-left: 0;
+}
+
+.footer-title {
+  font-family: 'HakgyoansimAllimjang', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #434343;
+  letter-spacing: -0.32px;
+  margin-bottom: 4px;
+}
+
+.footer-desc {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #868383;
+  letter-spacing: -0.24px;
+}
+
+/* New Academy */
+.new-academy {
+  padding-right: 20px;
+  margin-top: 26px; /* 10px -> 26px로 수정하여 실제 간격 56px 확보 */
+  padding-bottom: 0;
+}
+
+.new-academy .section-title {
+  text-align: left;
+  margin-bottom: 18px;
+  font-family: 'HakgyoansimAllimjang', 'Pretendard', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+
+.new-academy-card {
+  position: relative;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.new-academy-card a:not(.detail-btn) {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.new-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.spacer-bottom {
+  display: none;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 393px;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.04);
+  z-index: 100; /* 스크롤 시 다른 요소 위로 올라오도록 상향 */
+  padding: 0 10px 10px 10px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #adadad;
+  font-size: 11px;
+  gap: 6px;
+  flex: 1;
+}
+
+.nav-item i {
+  font-size: 22px;
+}
+
+.nav-item.active {
+  color: var(--primary);
+}
+
+.nav-item-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -20px;
+  flex: 1;
+}
+
+.fab-btn {
+  width: 74px;
+  height: 74px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: 6px solid #fff;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+}
+
+.fab-btn i {
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+
+.fab-text {
+  font-size: 11px;
+  font-weight: 500;
+}

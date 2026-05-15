@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PUMTO - 창의만들기</title>
+  <link rel="stylesheet" href="creative-process.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- Header -->
+    <header class="header">
+      <button class="back-btn" onclick="history.back()">
+        <i class="fa-solid fa-arrow-left-long"></i>
+      </button>
+      <h1 class="title">창의만들기</h1>
+      <div class="header-right">
+        <button class="icon-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="icon-btn cart-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge">2</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Banner -->
+      <section class="banner-section">
+        <div class="banner">
+          <div class="banner-content">
+            <div class="banner-badge">
+              <i class="fa-solid fa-fire"></i> 오늘의 특가
+            </div>
+            <h2 class="banner-title">
+              우리 아이 미술 수업<br>
+              <span class="highlight">준비물</span> 특가!
+            </h2>
+            <p class="banner-desc">다양한 재료를 특별한 가격으로 만나보세요.</p>
+          </div>
+          <div class="banner-img">
+            <img src="./FUMTO.img/img.70.png" alt="준비물 특가">
+          </div>
+          <div class="banner-pagination">01 / 03</div>
+        </div>
+      </section>
+
+      <!-- Menu Tabs -->
+      <section class="menu-tabs-section">
+        <div class="menu-tabs">
+          <button class="tab-btn active">전체</button>
+          <button class="tab-btn">연령별</button>
+          <button class="tab-btn">재료별</button>
+          <button class="tab-btn">난이도별</button>
+          <button class="tab-btn">집콕추천</button>
+        </div>
+      </section>
+
+      <!-- Materials Category -->
+      <section class="materials-section">
+        <div class="section-header">
+          <h2>학부모가 많이 찾는 준비물</h2>
+          <a href="#" class="more-link">더보기 &gt;</a>
+        </div>
+        <div class="category-list">
+          <div class="category-item">
+            <div class="category-icon-wrapper">
+              <img src="./FUMTO.img/img.68.png" alt="베스트 키트">
+            </div>
+            <p class="category-title">베스트 키트</p>
+            <p class="category-subtitle">Best</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon-wrapper">
+              <img src="./FUMTO.img/img.64.png" alt="유아 추천">
+            </div>
+            <p class="category-title">유아 추천</p>
+            <p class="category-subtitle">5-7세</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon-wrapper">
+              <img src="./FUMTO.img/img.65.png" alt="초등 추천">
+            </div>
+            <p class="category-title">초등 추천</p>
+            <p class="category-subtitle">8-10세</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon-wrapper">
+              <img src="./FUMTO.img/img.66.png" alt="창의력 UP">
+            </div>
+            <p class="category-title">창의력 UP</p>
+            <p class="category-subtitle">인기 재료</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon-wrapper">
+              <img src="./FUMTO.img/img.67.png" alt="친환경 재료">
+            </div>
+            <p class="category-title">친환경 재료</p>
+            <p class="category-subtitle">안심사용</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Filter -->
+      <section class="products-header">
+        <div class="products-count">전체 상품 <span class="highlight">132</span>개</div>
+        <div class="products-filter">
+          <button class="filter-btn">필터 <i class="fa-solid fa-sliders"></i></button>
+          <button class="sort-btn">최신순 <i class="fa-solid fa-chevron-down"></i></button>
+        </div>
+      </section>
+
+      <!-- Products Grid -->
+      <section class="products-grid">
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="./FUMTO.img/img.73.png" alt="딩동댕 그림 물감" class="product-img">
+            <span class="best-badge">BEST</span>
+            <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <div class="product-info">
+            <p class="brand">엠케이플러스</p>
+            <h3 class="product-name">딩동댕 그림 물감</h3>
+            <p class="original-price">5,000원</p>
+            <div class="price-row">
+              <span class="discount">20%</span>
+              <span class="price">4,000원</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="./FUMTO.img/img.74.png" alt="어린이 캐릭터 스케치북" class="product-img">
+            <span class="best-badge">BEST</span>
+            <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <div class="product-info">
+            <p class="brand">클라리온몰</p>
+            <h3 class="product-name">어린이 캐릭터 스케치북</h3>
+            <p class="original-price">8,800원</p>
+            <div class="price-row">
+              <span class="discount">20%</span>
+              <span class="price">7,040원</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="./FUMTO.img/img.72.png" alt="미술 유아 앞치마" class="product-img">
+            <span class="best-badge">BEST</span>
+            <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <div class="product-info">
+            <p class="brand">마이리틀데이</p>
+            <h3 class="product-name">미술 유아 앞치마</h3>
+            <p class="original-price">9,000원</p>
+            <div class="price-row">
+              <span class="discount">10%</span>
+              <span class="price">8,100원</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="./FUMTO.img/img.69.png" alt="찰흙 세트" class="product-img">
+            <span class="best-badge">BEST</span>
+            <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <div class="product-info">
+            <p class="brand">드림아트</p>
+            <h3 class="product-name">찰흙 세트</h3>
+            <p class="original-price">7,000원</p>
+            <div class="price-row">
+              <span class="discount">15%</span>
+              <span class="price">5,950원</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="./FUMTO.img/img.71.png" alt="어린이 붓 세트 (15종)" class="product-img">
+            <span class="best-badge">BEST</span>
+            <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <div class="product-info">
+            <p class="brand">마이리틀데이</p>
+            <h3 class="product-name">어린이 붓 세트 (15종)</h3>
+            <p class="original-price">8,000원</p>
+            <div class="price-row">
+              <span class="discount">25%</span>
+              <span class="price">6,000원</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="./FUMTO.img/img.75.png" alt="어린이 크레파스 48색" class="product-img">
+            <span class="best-badge">BEST</span>
+            <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <div class="product-info">
+            <p class="brand">문구마스터</p>
+            <h3 class="product-name">어린이 크레파스 48색</h3>
+            <p class="original-price">15,000원</p>
+            <div class="price-row">
+              <span class="discount">33%</span>
+              <span class="price">10,000원</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="spacer-bottom"></div>
+    </main>
+
+    <!-- Bottom Nav -->
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>홈</span>
+      </a>
+      <a href="save-academy.html" class="nav-item">
+        <i class="fa-solid fa-heart"></i>
+        <span>찜</span>
+      </a>
+      <div class="nav-item-center">
+        <div class="fab-btn">
+          <i class="fa-solid fa-pen"></i>
+          <span class="fab-text">후기작성</span>
+        </div>
+      </div>
+      <a href="growth.html" class="nav-item">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>성장</span>
+      </a>
+      <a href="mypage.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>마이</span>
+      </a>
+    </nav>
+    <script>
+      (function() {
+        const isSaved = localStorage.getItem('pumto_isSaved') === 'true';
+        document.querySelectorAll('a').forEach(link => {
+          if (link.href.includes('save-academy.html') || link.href.includes('save.html')) {
+            const currentPath = window.location.pathname;
+            if (!currentPath.includes('save.html') && !currentPath.includes('save-academy.html')) {
+              link.href = isSaved ? 'save.html' : 'save-academy.html';
+            }
+          }
+        });
+      })();
+    </script>
+  </div>
+</body>
+</html>
