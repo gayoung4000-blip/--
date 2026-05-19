@@ -1,7 +1,13 @@
 @font-face {
-  font-family: 'HakgyoansimAllimjang';
-  src: url('./font.file/%ED%95%99%EA%B5%90%EC%95%88%EC%8B%AC%20%EC%95%8C%EB%A6%BC%EC%9E%A5/Hakgyoansim%20Allimjang%20TTF%20R.ttf') format('truetype');
-  font-weight: 400;
+    font-family: 'HakgyoansimAllimjang';
+    src: url('./font.file/%ED%95%99%EA%B5%90%EC%95%88%EC%8B%AC%20%EC%95%8C%EB%A6%BC%EC%9E%A5/Hakgyoansim%20Allimjang%20TTF%20R.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'HakgyoansimAllimjang';
+    src: url('./font.file/%ED%95%99%EA%B5%90%EC%95%88%EC%8B%AC%20%EC%95%8C%EB%A6%BC%EC%9E%A5/Hakgyoansim%20Allimjang%20TTF%20B.ttf') format('truetype');
+    font-weight: 700;
 }
 
 * {
@@ -10,75 +16,74 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     width: 100%;
-    height: 100%;
-    background-color: #FF9F46;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2f2f2f;
     overflow: hidden;
-    font-family: 'HakgyoansimAllimjang', sans-serif;
 }
 
-.intro-container {
-    width: 100%;
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    background-color: #FF9F46;
+.intro-screen {
+    position: relative;
+    width: min(100vw, 393px);
+    height: min(100dvh, 852px);
+    background: #ff9f46;
+    overflow: hidden;
 }
 
-/* 1. 텍스트 영역: 높이를 늘려 아래로 밀어냄 */
-.section-text {
-    width: 100%;
-    height: 35vh; /* 18vh -> 35vh로 늘려 텍스트 위치를 아래로 이동 */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 0px; /* 캐릭터와 완전히 밀착 */
-    color: #FFFFFF;
-    font-size: 21px;
-    line-height: 1.4;
+.intro-copy {
+    position: absolute;
+    top: 28.2%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
     text-align: center;
-    margin-top: -50px; /* -40px -> -50px로 10px 더 위로 이동 */
+    font-family: 'HakgyoansimAllimjang', sans-serif;
+    font-size: clamp(20px, 5.35vw, 23px);
+    font-weight: 400;
+    line-height: 1.4;
+    white-space: nowrap;
 }
 
-/* 2. 캐릭터 영역: 텍스트 바로 아래 상단 밀착 */
-.section-char {
-    width: 100%;
-    height: 40vh; /* 텍스트가 내려온 만큼 높이 조정 */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 0;
-}
-
-.img-char {
-    max-width: 75%;
-    max-height: 100%;
-    width: auto;
+.intro-logo {
+    position: absolute;
+    top: 37.5%;
+    left: 50%;
+    width: min(71.2vw, 280px);
     height: auto;
-    object-fit: contain;
+    transform: translate(-50%, -45px);
     display: block;
-    margin-top: -45px; /* -55px -> -45px로 10px 아래로 이동 */
 }
 
-/* 3. 로고 영역: 화면 높이의 20% */
-.section-logo {
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-top: -20px; /* 20px 위로 이동 */
-}
-
-.img-logo {
-    width: 100% !important;
-    max-width: 950px; /* 930px -> 950px로 20px 추가 확대 */
-    max-height: 100%;
+.intro-character {
+    position: absolute;
+    left: 50%;
+    bottom: -0.6%;
+    width: min(84vw, 330px);
     height: auto;
-    object-fit: contain;
-    transform: scale(3.0); /* 깔끔하게 3배로 확대 */
-    transform-origin: center;
+    transform: translateX(-50%);
+    display: block;
+}
+
+@media (max-height: 760px) {
+    .intro-copy {
+        top: 26.5%;
+    }
+
+    .intro-logo {
+        top: 35.5%;
+    }
+
+    .intro-character {
+        width: min(80vw, 315px);
+        bottom: -1%;
+    }
 }
