@@ -2,9 +2,25 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>PUMTO - 온보딩</title>
     <link rel="stylesheet" href="intro-blue.css?v=11">
+    <!-- IOS/Chrome PWA 설정 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="PUMTO" />
+    <link rel="apple-touch-icon" href="/PUMTO.img/logo.1.png" />
+    <!-- Android/Chrome PWA 설정 -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#FF9F46" />
+
+    <!-- 移댁뭅?ㅽ넚/SNS 怨듭쑀 ?몃꽕???ㅼ젙 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="?덊넗 - PUMTO">
+    <meta property="og:description" content="?곕━ ?꾩씠 誘몄닠??泥섏쓬遺???앷퉴吏, PUMTO">
+    <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
+    <meta property="og:url" content="https://pumto-web-app.vercel.app">
 </head>
 <body>
     <div class="mobile-container">
@@ -12,30 +28,31 @@
         <div class="white-bg-hill"></div>
 
         <!-- 메인 콘텐츠 -->
-        <div class="onboarding-content">
-            <div class="title-section">
-                <h2 class="main-title">
-                    우리 아이에게 딱 맞는<br>
-                    미술 학원을 찾아보세요.
-                </h2>
-            </div>
+        <div class="title-section">
+            <h2 class="main-title">
+                우리 아이에게 딱 맞는<br>
+                미술 학원을 찾아보세요.
+            </h2>
+        </div>
 
-            <div class="illustration-section">
-                <div class="illust-container">
-                    <img src="./FUMTO.img/img.86.png" alt="학습 일러스트" class="main-illust">
-                    <img src="./FUMTO.img/img.91.png" alt="그림 일러스트" class="sub-illust">
-                </div>
+        <div class="illustration-section">
+            <div class="illust-container">
+                <img src="./PUMTO.img/img.86.png" alt="학습 일러스트" class="main-illust">
+                <img src="./PUMTO.img/img.91.png" alt="그림 일러스트" class="sub-illust">
             </div>
+        </div>
 
-            <div class="bottom-content">
-                <div class="indicator">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <button class="btn-next" onclick="location.href='intro-green.html'">다음</button>
+        <div class="bottom-content">
+            <div class="indicator">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
+            <button class="btn-next" onclick="location.href='intro-green.html'">다음</button>
         </div>
     </div>
 </body>
 </html>
+
+
+

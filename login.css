@@ -31,7 +31,7 @@ body, html {
 .mobile-container {
     width: 100%;
     max-width: 393px;
-    height: 100vh;
+    height: 100%;
     background-color: #8dca43;
     position: relative;
     margin: 0 auto;
@@ -43,29 +43,29 @@ body, html {
 /* ── 상단 영역 (그린 배경) ── */
 .top-section {
     position: relative;
-    height: 60vh;
+    height: 60%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 8vh;
+    padding-top: 8%;
     z-index: 2;
 }
 
 .logo-img {
     width: clamp(200px, 55vw, 300px); 
     height: auto;
-    margin-top: 35px; /* 로고 위치 고정 */
+    margin-top: 94px; /* 로고 위치를 아래로 더 이동 */
     margin-left: -38px;
-    margin-bottom: 4vh;
+    margin-bottom: 4%;
 }
 
 .character-img {
     width: clamp(180px, 55vw, 260px); /* 캐릭터 크기 소폭 조정 */
     height: auto;
     position: absolute; /* 로고를 밀어내지 않도록 절대 좌표 설정 */
-    top: 7vh; /* 캐릭터만 조금 더 아래로 이동 */
+    top: 12%; /* 캐릭터 이미지를 아래로 조금 더 이동 */
     left: 50%;
     transform: translateX(calc(-50% + 10px)); /* 아주 미세하게 오른쪽으로 이동 */
     z-index: 3;
@@ -74,11 +74,11 @@ body, html {
 /* ── 하단 곡선 배경 (흰색 언덕) ── */
 .white-bg-hill {
     position: absolute;
-    bottom: -15vh; /* intro-blue와 동일하게 수정 */
+    bottom: -15%; /* intro-blue와 동일하게 수정 */
     left: 50%;
     transform: translateX(-50%);
     width: 200%; /* intro-blue와 동일하게 수정 */
-    height: 60vh; /* intro-blue와 동일하게 수정 */
+    height: 60%; /* intro-blue와 동일하게 수정 */
     background-color: #FFFFFF;
     border-radius: 50% 50% 0 0;
     z-index: 1;
@@ -87,21 +87,21 @@ body, html {
 /* ── 하단 콘텐츠 영역 ── */
 .bottom-content {
     position: relative;
-    height: 40vh;
+    height: 40%;
     width: 100%;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 2vh 55px 6vh 55px; /* 좌우 여백을 더 늘려 콘텐츠 폭 추가 축소 */
+    padding: 2% 55px 6% 55px; /* 좌우 여백을 더 늘려 콘텐츠 폭 추가 축소 */
     z-index: 10;
 }
 
 /* 로그인 버튼 */
 .btn-login {
     width: 100%;
-    height: clamp(40px, 7vh, 60px); /* intro-blue와 높이 동일하게 축소 */
+    height: clamp(40px, 7%, 60px); /* intro-blue와 높이 동일하게 축소 */
     background-color: #8dca43;
     color: #FFFFFF;
     border: none;
@@ -114,6 +114,7 @@ body, html {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 10px rgba(141, 202, 67, 0.2);
+    margin-top: 12px; /* 로그인 버튼을 아래로 약간 이동 */
 }
 
 /* 소셜 로그인 구분선 */
@@ -122,7 +123,7 @@ body, html {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin: 2vh 0;
+    margin: 2% 0;
 }
 
 .line {
@@ -141,9 +142,11 @@ body, html {
 /* 소셜 아이콘 그룹 */
 .social-icons-group {
     display: flex;
-    gap: -10px; /* 음수 간격을 더 확대하여 더 많이 겹침 */
+    gap: -24px; /* 더 조밀하게 겹치도록 아이콘 간격을 더욱 줄임 */
     justify-content: center;
     align-items: center;
+    margin-top: -30px; /* 로고와 균형을 맞춰 더욱 위로 이동 */
+    margin-bottom: 10px;
 }
 
 .social-icon-btn {

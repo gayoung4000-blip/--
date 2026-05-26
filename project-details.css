@@ -47,9 +47,16 @@ body {
 }
 
 .back-btn {
-  color: var(--text-dark);
+  background: none;
+  border: none;
+  padding: 0;
+  color: #FF8F28;
   font-size: 20px;
   text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header .title {
@@ -204,20 +211,20 @@ body {
 }
 
 .stat-label {
-  font-size: 8px;
+  font-size: 9px;
   color: #8A8A8A;
   font-weight: 600;
 }
 
 .stat-value {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--text-dark);
 }
 
 .info-box .divider {
   width: 1px;
-  height: 20px;
+  height: 24px;
   background-color: var(--border-light);
 }
 
@@ -259,13 +266,13 @@ body {
 }
 
 .teacher-text .label {
-  font-size: 8px;
+  font-size: 9px;
   color: #9A9A9A;
   font-weight: 600;
 }
 
 .teacher-text .name {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--text-dark);
 }
@@ -274,7 +281,7 @@ body {
   background: none;
   border: 1px solid var(--secondary);
   color: var(--secondary);
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 600;
   padding: 6px 12px;
   border-radius: 25px;
@@ -395,7 +402,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #ADADAD;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .nav-text {
@@ -405,13 +412,13 @@ body {
 }
 
 .nav-label {
-  font-size: 9px;
+  font-size: 9.5px;
   color: var(--text-gray);
   font-weight: 600;
 }
 
 .nav-project-title {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--text-dark);
 }
@@ -432,7 +439,7 @@ body {
   background-color: #FFF9F3;
   border: 1px solid #FFE1C5;
   border-radius: 10px;
-  padding: 16px;
+  padding: 12px 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -442,7 +449,7 @@ body {
 .banner-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .camera-icon-wrapper {
@@ -458,14 +465,15 @@ body {
 }
 
 .banner-text .main-text {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 2px;
+  margin-bottom: 0;
+  white-space: nowrap;
 }
 
 .banner-text .sub-text {
-  font-size: 8px;
+  font-size: 8.5px;
   color: #525252;
   font-weight: 600;
 }
@@ -474,7 +482,7 @@ body {
   background-color: #FFE1C5;
   border: 1px solid var(--primary);
   color: #FE9028;
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
   padding: 6px 12px;
   border-radius: 30px;

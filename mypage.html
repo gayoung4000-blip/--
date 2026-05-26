@@ -2,18 +2,31 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>품토 - 마이페이지</title>
   <link rel="stylesheet" href="mypage.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- IOS/Chrome PWA 설정 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="PUMTO" />
+  <link rel="apple-touch-icon" href="/PUMTO.img/logo.1.png" />
+  <!-- Android/Chrome PWA 설정 -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#FF9F46" />
+
+    <!-- 移댁뭅?ㅽ넚/SNS 怨듭쑀 ?몃꽕???ㅼ젙 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="?덊넗 - PUMTO">
+    <meta property="og:description" content="?곕━ ?꾩씠 誘몄닠??泥섏쓬遺???앷퉴吏, PUMTO">
+    <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
+    <meta property="og:url" content="https://pumto-web-app.vercel.app">
 </head>
 <body>
   <div class="mobile-container">
     
     <header class="header">
-      <button class="back-btn" onclick="history.back()">
-        <i class="fa-solid fa-arrow-left-long"></i>
-      </button>
       <h1 class="title">마이페이지</h1>
       <button class="icon-btn">
         <i class="fa-solid fa-gear"></i>
@@ -28,7 +41,7 @@
         <div class="profile-card">
           <div class="profile-avatar-wrapper">
             <div class="profile-avatar">
-              <img src="./FUMTO.img/img.61.png" alt="프로필 이미지">
+              <img src="./PUMTO.img/img.61.png" alt="프로필 이미지">
             </div>
             <div class="edit-badge">
               <i class="fa-solid fa-pencil"></i>
@@ -58,7 +71,7 @@
           <!-- Registered Kid Card -->
           <div class="kid-card registered">
             <div class="kid-card-content">
-              <img src="./FUMTO.img/img.62.png" alt="아이 프로필" class="kid-avatar">
+              <img src="./PUMTO.img/img.62.png" alt="아이 프로필" class="kid-avatar">
               <div class="kid-details">
                 <h3>김지우</h3>
                 <div class="kid-meta-row">
@@ -90,14 +103,14 @@
         </div>
         <div class="activity-cards">
           <div class="activity-card">
-            <img src="./FUMTO.img/img.59.png" alt="예약 내역 이미지" class="activity-img">
+            <img src="./PUMTO.img/img.59.png" alt="예약 내역 이미지" class="activity-img">
             <div class="activity-text">
               <h3>예약 내역</h3>
               <p>체험 수업 예약 현황을<br>확인해보세요.</p>
             </div>
           </div>
           <div class="activity-card">
-            <img src="./FUMTO.img/img.60.png" alt="성장 기록 이미지" class="activity-img">
+            <img src="./PUMTO.img/img.60.png" alt="성장 기록 이미지" class="activity-img">
             <div class="activity-text">
               <h3>성장 기록</h3>
               <p>아이의 수업 활동과 후기를<br>확인해보세요.</p>
@@ -199,3 +212,6 @@
   </div>
 </body>
 </html>
+
+
+

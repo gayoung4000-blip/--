@@ -1,0 +1,21 @@
+﻿{
+  "name": "품토 - PUMTO",
+  "short_name": "PUMTO",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF9F46",
+  "icons": [
+    {
+      "src": "/PUMTO.img/logo.1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/PUMTO.img/logo.1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+

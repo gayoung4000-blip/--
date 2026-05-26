@@ -2,11 +2,27 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>PUMTO - 홈</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <!-- IOS/Chrome PWA 설정 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="PUMTO" />
+    <link rel="apple-touch-icon" href="/PUMTO.img/logo.1.png" />
+    <!-- Android/Chrome PWA 설정 -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#FF9F46" />
+
+    <!-- SNS/카카오 공유 미리보기 설정 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="미술학원 - PUMTO">
+    <meta property="og:description" content="우리 아이의 상상력이 자라는 미술학원 찾기, PUMTO">
+    <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
+    <meta property="og:url" content="https://pumto-web-app.vercel.app">
 </head>
 <body>
     <div class="mobile-container">
@@ -21,10 +37,10 @@
         </header>
 
         <section class="main-banner">
-            <img src="./FUMTO.img/img.15.png" alt="" class="banner-top-art">
-            <img src="./FUMTO.img/img.1.png" alt="" class="banner-blob-left">
-            <img src="./FUMTO.img/img.2.png" alt="" class="banner-blob-center">
-            <img src="./FUMTO.img/img.3.png" alt="" class="banner-blob-right">
+            <img src="./PUMTO.img/img.15.png" alt="" class="banner-top-art">
+            <img src="./PUMTO.img/img.1.png" alt="" class="banner-blob-left">
+            <img src="./PUMTO.img/img.2.png" alt="" class="banner-blob-center">
+            <img src="./PUMTO.img/img.3.png" alt="" class="banner-blob-right">
             <div class="banner-content-wrapper">
                 <p class="banner-text">우리 아이의<br>상상력이 자라는</p>
             </div>
@@ -32,7 +48,7 @@
                 <p class="banner-highlight">미술학원 찾기</p>
             </div>
             <div class="banner-illust-character">
-                <img src="./FUMTO.img/img.18.png" alt="banner character">
+                <img src="./PUMTO.img/img.18.png" alt="banner character">
             </div>
         </section>
 
@@ -41,7 +57,7 @@
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" class="search-input" placeholder="지역, 학원명, 키워드로 검색해보세요">
                 <span class="search-divider"></span>
-                <div class="filter-btn">
+                <div class="filter-btn" onclick="location.href='filter.html'">
                     <i class="fa-solid fa-sliders"></i>
                     <span>필터</span>
                 </div>
@@ -49,63 +65,58 @@
         </div>
 
         <section class="category-grid">
-            <div class="category-item">
+            <div class="category-item no-click">
                 <div class="category-icon-wrapper" style="background-color: #f4f7e9;">
-                    <img src="./FUMTO.img/img.5.png" alt="연령별">
+                    <img src="./PUMTO.img/img.5.png" alt="연령별">
                 </div>
                 <span class="category-name">연령별 추천</span>
-                <span class="category-sub">5-6세 · 7-8세</span>
             </div>
-            <div class="category-item">
+            <div class="category-item no-click">
                 <div class="category-icon-wrapper" style="background-color: #f4f7e9;">
-                    <img src="./FUMTO.img/img.6.png" alt="성향별">
+                    <img src="./PUMTO.img/img.6.png" alt="성향별">
                 </div>
                 <span class="category-name">성향별 추천</span>
-                <span class="category-sub">창의형 · 집중형</span>
             </div>
-            <div class="category-item">
+            <div class="category-item" onclick="location.href='academy-index.html'">
                 <div class="category-icon-wrapper" style="background-color: #f4f7e9;">
-                    <img src="./FUMTO.img/img.8.png" alt="주변">
+                    <img src="./PUMTO.img/img.8.png" alt="주변">
                 </div>
                 <span class="category-name">내 주변 학원</span>
-                <span class="category-sub">지도 보기</span>
             </div>
-            <div class="category-item">
+            <div class="category-item" onclick="location.href = localStorage.getItem('pumto_isSaved') === 'true' ? 'save.html' : 'save-academy.html'">
                 <div class="category-icon-wrapper" style="background-color: #f4f7e9;">
-                    <img src="./FUMTO.img/img.7.png" alt="찜">
+                    <img src="./PUMTO.img/img.7.png" alt="찜">
                 </div>
                 <span class="category-name">찜한 학원</span>
-                <span class="category-sub">0개</span>
             </div>
             <div class="category-item">
                 <div class="category-icon-wrapper" style="background-color: #f4f7e9;">
-                    <img src="./FUMTO.img/img.4.png" alt="이벤트">
+                    <img src="./PUMTO.img/img.4.png" alt="이벤트">
                 </div>
                 <span class="category-name">이벤트/혜택</span>
-                <span class="category-sub">체험 · 할인 정보</span>
             </div>
         </section>
 
         <section class="section-wrapper age-suggestions">
             <div class="section-header">
                 <h2 class="section-title">연령별 추천 학원</h2>
-                <a href="filter.html" class="more-btn">더보기 &gt;</a>
+                <a href="#" class="more-btn" onclick="event.preventDefault()">더보기 &gt;</a>
             </div>
             <div class="horizontal-scroll">
                 <div class="recommend-card" style="background-color: #f4f7e9;">
                     <span class="card-tag" style="background-color: rgba(137, 193, 67, 0.2); color: #89c143;">5~6세 추천</span>
                     <p class="card-title">즐겁게 표현하는<br>미술 수업</p>
-                    <img src="./FUMTO.img/img.9.png" alt="" class="card-illust bear-illust">
+                    <img src="./PUMTO.img/img.9.png" alt="" class="card-illust bear-illust">
                 </div>
                 <div class="recommend-card" style="background-color: #fef4e2;">
                     <span class="card-tag" style="background-color: rgba(255, 159, 70, 0.2); color: #ff9f46;">7~8세 추천</span>
                     <p class="card-title">창의력이 자라는<br>미술 수업</p>
-                    <img src="./FUMTO.img/img.10.png" alt="" class="card-illust easel-illust">
+                    <img src="./PUMTO.img/img.10.png" alt="" class="card-illust easel-illust">
                 </div>
                 <div class="recommend-card" style="background-color: #f4f7e9;">
                     <span class="card-tag" style="background-color: rgba(137, 193, 67, 0.2); color: #89c143;">9~10세 추천</span>
                     <p class="card-title">생각을 그리는<br>회화 미술 수업</p>
-                    <img src="./FUMTO.img/img.11.png" alt="" class="card-illust sketchbook-illust">
+                    <img src="./PUMTO.img/img.11.png" alt="" class="card-illust sketchbook-illust">
                 </div>
             </div>
         </section>
@@ -115,8 +126,8 @@
                 <h2 class="section-title">지금 이 지역 인기 학원</h2>
             </div>
             <div class="popular-scroll">
-                <div class="academy-card" onclick="location.href='art-academy.html'">
-                    <img src="./FUMTO.img/img.22.png" alt="" class="academy-img">
+                <div class="academy-card">
+                    <img src="./PUMTO.img/img.22.png" alt="" class="academy-img">
                     <span class="hot-tag">HOT</span>
                     <button class="like-btn" onclick="event.stopPropagation(); toggleLike(this)">
                         <i class="fa-regular fa-heart"></i>
@@ -132,8 +143,8 @@
                         <p class="academy-loc">도보 8분 | 서초구 방배동</p>
                     </div>
                 </div>
-                <div class="academy-card" onclick="location.href='art-academy.html'">
-                    <img src="./FUMTO.img/img.23.png" alt="" class="academy-img">
+                <div class="academy-card">
+                    <img src="./PUMTO.img/img.23.png" alt="" class="academy-img">
                     <span class="hot-tag">HOT</span>
                     <button class="like-btn" onclick="event.stopPropagation(); toggleLike(this)">
                         <i class="fa-regular fa-heart"></i>
@@ -149,8 +160,8 @@
                         <p class="academy-loc">도보 10분 | 서초구 방배동</p>
                     </div>
                 </div>
-                <div class="academy-card" onclick="location.href='art-academy.html'">
-                    <img src="./FUMTO.img/img.24.png" alt="" class="academy-img">
+                <div class="academy-card">
+                    <img src="./PUMTO.img/img.24.png" alt="" class="academy-img">
                     <span class="hot-tag">HOT</span>
                     <button class="like-btn" onclick="event.stopPropagation(); toggleLike(this)">
                         <i class="fa-regular fa-heart"></i>
@@ -169,23 +180,23 @@
             </div>
         </section>
 
-        <section class="section-wrapper experience-banner" onclick="location.href='filter.html'">
+        <section class="section-wrapper experience-banner">
             <div class="exp-content">
                 <p class="exp-title">우리 아이 첫 미술,<br><span class="highlight-text">체험 수업으로 시작해보세요!</span></p>
                 <p class="exp-desc">체험수업 가능한 학원을 한눈에 확인</p>
                 <div class="exp-btn">체험 학원 보기 &gt;</div>
             </div>
-            <img src="./FUMTO.img/img.21.png" alt="" class="exp-illust">
+            <img src="./PUMTO.img/img.21.png" alt="" class="exp-illust">
         </section>
 
         <section class="section-wrapper map-section">
             <div class="map-container">
-                <img src="./FUMTO.img/map.png" alt="map" class="map-img">
+                <img src="./PUMTO.img/map.png" alt="map" class="map-img">
                 <div class="map-dot dot-1"></div>
                 <div class="map-dot dot-2"></div>
                 <div class="map-dot dot-3"></div>
                 <i class="fa-solid fa-location-dot map-pin"></i>
-                <div class="list-view-btn" onclick="location.href='filter.html'">
+                <div class="list-view-btn" onclick="location.href='academy-index.html'">
                     <i class="fa-solid fa-list-ul"></i> 목록 보기
                 </div>
             </div>
@@ -196,8 +207,8 @@
                 <h2 class="section-title" style="font-size: 20px; line-height: 1.3;">지금 만나볼 수 있는<br>미술 특가 상품</h2>
                 <i class="fa-solid fa-chevron-right arrow-more"></i>
             </div>
-            <div class="offer-card" onclick="location.href='filter.html'">
-                <img src="./FUMTO.img/img.94.png" alt="" class="offer-illust-main">
+            <div class="offer-card" onclick="location.href='creative-process.html'">
+                <img src="./PUMTO.img/img.94.png" alt="" class="offer-illust-main">
             </div>
             <div class="offer-footer">
                 <p class="offer-footer-title">학원에서 쓰는 그 재료, 지금 할인 중이에요</p>
@@ -210,7 +221,7 @@
                 <h2 class="section-title" style="font-size: 20px; line-height: 1.3;">이 학원 어때요?<br>새로 입점한 학원이에요</h2>
             </div>
             <div class="new-academy-card">
-                <img src="./FUMTO.img/img.25.png" alt="" class="new-academy-img">
+                <img src="./PUMTO.img/img.25.png" alt="" class="new-academy-img">
                 <div class="detail-badge">상세보기</div>
             </div>
         </section>
@@ -294,5 +305,36 @@
             updateWishTabIcon(isSaved);
         })();
     </script>
+    <script>
+        // 가로 스크롤 영역: 가로 드래그 → 카드 스크롤, 세로 드래그 → 페이지 스크롤
+        document.querySelectorAll('.horizontal-scroll').forEach(function(el) {
+            var startX, startY, isHorizontal = null;
+
+            el.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                isHorizontal = null;
+            }, { passive: true });
+
+            el.addEventListener('touchmove', function(e) {
+                if (isHorizontal === null) {
+                    var dx = Math.abs(e.touches[0].clientX - startX);
+                    var dy = Math.abs(e.touches[0].clientY - startY);
+                    if (dx > dy) {
+                        isHorizontal = true;   // 가로: 카드 스크롤
+                    } else {
+                        isHorizontal = false;  // 세로: 페이지 스크롤로 넘김
+                    }
+                }
+                if (isHorizontal) {
+                    // 가로 스크롤: 기본 동작 막고 컨테이너가 처리
+                    e.stopPropagation();
+                }
+                // 세로면 preventDefault 호출 안 함 → 페이지가 자연스럽게 스크롤
+            }, { passive: true });
+        });
+    </script>
 </body>
 </html>
+
+

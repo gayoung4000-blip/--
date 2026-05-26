@@ -2,10 +2,26 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>예약 완료 - 품토</title>
   <link rel="stylesheet" href="reservation-fin.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- IOS/Chrome PWA 설정 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="PUMTO" />
+  <link rel="apple-touch-icon" href="/PUMTO.img/logo.1.png" />
+  <!-- Android/Chrome PWA 설정 -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#FF9F46" />
+
+    <!-- 移댁뭅?ㅽ넚/SNS 怨듭쑀 ?몃꽕???ㅼ젙 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="?덊넗 - PUMTO">
+    <meta property="og:description" content="?곕━ ?꾩씠 誘몄닠??泥섏쓬遺???앷퉴吏, PUMTO">
+    <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
+    <meta property="og:url" content="https://pumto-web-app.vercel.app">
 </head>
 <body>
   <div class="fin-container">
@@ -17,7 +33,7 @@
     <!-- Success Visual -->
     <section class="success-visual-wrap">
       <div class="success-graphic-container">
-        <img src="./FUMTO.img/img.51.png" alt="성공" class="success-graphic">
+        <img src="./PUMTO.img/img.51.png" alt="성공" class="success-graphic">
       </div>
       <div class="success-message">
         <h2 class="msg-main">체험 수업 <span>예약이 완료</span>되었어요!</h2>
@@ -30,11 +46,11 @@
       <h3 class="card-title">예약 정보</h3>
       
       <div class="academy-mini-card">
-        <img src="./FUMTO.img/img.25.png" alt="그림공룡 미술학원" class="mini-img">
+        <img src="./PUMTO.img/img.25.png" alt="그림공룡 미술학원" class="mini-img">
         <div class="mini-info">
           <h4 class="mini-name">그림공룡 미술학원</h4>
           <div class="mini-address-row">
-            <img src="./FUMTO.img/img.45.png" alt="위치" class="mini-icon">
+            <img src="./PUMTO.img/img.45.png" alt="위치" class="mini-icon">
             서울 서초구 서초동 123-45
           </div>
           <div class="mini-tags">
@@ -50,28 +66,28 @@
       <div class="detail-table">
         <div class="detail-row">
           <div class="detail-label-wrap">
-            <img src="./FUMTO.img/img.47.png" alt="날짜" class="detail-icon">
+            <img src="./PUMTO.img/img.47.png" alt="날짜" class="detail-icon">
             <span class="detail-label">수업 날짜</span>
           </div>
           <span class="detail-value">2026년 4월 17일 (금)</span>
         </div>
         <div class="detail-row">
           <div class="detail-label-wrap">
-            <img src="./FUMTO.img/img.46.png" alt="시간" class="detail-icon">
+            <img src="./PUMTO.img/img.46.png" alt="시간" class="detail-icon">
             <span class="detail-label">수업 시간</span>
           </div>
           <span class="detail-value">14:00 ~ 15:00</span>
         </div>
         <div class="detail-row">
           <div class="detail-label-wrap">
-            <img src="./FUMTO.img/img.48.png" alt="선생님" class="detail-icon">
+            <img src="./PUMTO.img/img.48.png" alt="선생님" class="detail-icon">
             <span class="detail-label">담당 선생님</span>
           </div>
           <span class="detail-value">김미래 선생님</span>
         </div>
         <div class="detail-row contact-row">
           <div class="detail-label-wrap">
-            <img src="./FUMTO.img/img.50.png" alt="연락처" class="detail-icon contact-icon">
+            <img src="./PUMTO.img/img.50.png" alt="연락처" class="detail-icon contact-icon">
             <span class="detail-label">연락처</span>
           </div>
           <span class="detail-value">010-1234-5678</span>
@@ -91,13 +107,13 @@
     <!-- Notification Settings -->
     <section class="notification-section">
       <div class="notif-title-wrap">
-        <img src="./FUMTO.img/img.49.png" alt="알림" class="notif-icon">
+        <img src="./PUMTO.img/img.49.png" alt="알림" class="notif-icon">
         <h3 class="notif-title">알림 설정</h3>
       </div>
       <div class="notif-grid">
         <div class="notif-card">
           <div class="notif-info">
-            <img src="./FUMTO.img/img.49.png" alt="알림" class="notif-bell">
+            <img src="./PUMTO.img/img.49.png" alt="알림" class="notif-bell">
             <div class="notif-text-wrap">
               <span class="notif-main-text">수업 하루 전 알림</span>
             </div>
@@ -109,7 +125,7 @@
         </div>
         <div class="notif-card">
           <div class="notif-info">
-            <img src="./FUMTO.img/img.49.png" alt="알림" class="notif-bell">
+            <img src="./PUMTO.img/img.49.png" alt="알림" class="notif-bell">
             <div class="notif-text-wrap">
               <span class="notif-main-text">수업 1시간 전 알림</span>
             </div>
@@ -169,3 +185,6 @@
   </div>
 </body>
 </html>
+
+
+

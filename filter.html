@@ -2,10 +2,26 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>PUMTO - 필터</title>
   <link rel="stylesheet" href="filter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <!-- IOS/Chrome PWA 설정 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="PUMTO" />
+  <link rel="apple-touch-icon" href="/PUMTO.img/logo.1.png" />
+  <!-- Android/Chrome PWA 설정 -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#FF9F46" />
+
+    <!-- 移댁뭅?ㅽ넚/SNS 怨듭쑀 ?몃꽕???ㅼ젙 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="?덊넗 - PUMTO">
+    <meta property="og:description" content="?곕━ ?꾩씠 誘몄닠??泥섏쓬遺???앷퉴吏, PUMTO">
+    <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
+    <meta property="og:url" content="https://pumto-web-app.vercel.app">
 </head>
 <body>
   <div class="mobile-container">
@@ -156,8 +172,15 @@
     }
 
     function handleDrag(e, type) {
+      if (e.cancelable) {
+        e.preventDefault();
+      }
       const rect = slider.getBoundingClientRect();
+      
       const moveHandler = (moveEvent) => {
+        if (moveEvent.cancelable) {
+          moveEvent.preventDefault();
+        }
         const clientX = moveEvent.touches ? moveEvent.touches[0].clientX : moveEvent.clientX;
         let percent = ((clientX - rect.left) / rect.width) * 100;
         percent = Math.max(0, Math.min(100, percent));
@@ -165,10 +188,14 @@
         if (type === 'left') {
           if (percent < maxVal - 5) {
             minVal = percent;
+          } else {
+            minVal = maxVal - 5;
           }
         } else {
           if (percent > minVal + 5) {
             maxVal = percent;
+          } else {
+            maxVal = minVal + 5;
           }
         }
         updateSlider();
@@ -188,10 +215,61 @@
       document.addEventListener('touchend', upHandler);
     }
 
-    thumbLeft.addEventListener('mousedown', (e) => handleDrag(e, 'left'));
-    thumbRight.addEventListener('mousedown', (e) => handleDrag(e, 'right'));
-    thumbLeft.addEventListener('touchstart', (e) => handleDrag(e, 'left'), { passive: false });
-    thumbRight.addEventListener('touchstart', (e) => handleDrag(e, 'right'), { passive: false });
+    function handleTrackInteraction(e) {
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+      const rect = slider.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      let percent = ((clientX - rect.left) / rect.width) * 100;
+      percent = Math.max(0, Math.min(100, percent));
+
+      const distToLeft = Math.abs(percent - minVal);
+      const distToRight = Math.abs(percent - maxVal);
+      let activeType = 'left';
+
+      if (distToLeft < distToRight) {
+        if (percent < maxVal - 5) {
+          minVal = percent;
+        } else {
+          minVal = maxVal - 5;
+        }
+        activeType = 'left';
+      } else {
+        if (percent > minVal + 5) {
+          maxVal = percent;
+        } else {
+          maxVal = minVal + 5;
+        }
+        activeType = 'right';
+      }
+      updateSlider();
+
+      // Immediately initiate drag handling for the active thumb
+      handleDrag(e, activeType);
+    }
+
+    // Attach listeners
+    thumbLeft.addEventListener('mousedown', (e) => {
+      e.stopPropagation();
+      handleDrag(e, 'left');
+    });
+    thumbRight.addEventListener('mousedown', (e) => {
+      e.stopPropagation();
+      handleDrag(e, 'right');
+    });
+    thumbLeft.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+      handleDrag(e, 'left');
+    }, { passive: false });
+    thumbRight.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+      handleDrag(e, 'right');
+    }, { passive: false });
+
+    // Track/slider direct interaction (tap & drag anywhere)
+    slider.addEventListener('mousedown', handleTrackInteraction);
+    slider.addEventListener('touchstart', handleTrackInteraction, { passive: false });
 
     // Initial load
     minVal = 20;
@@ -219,3 +297,5 @@
   </script>
 </body>
 </html>
+
+

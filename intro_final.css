@@ -31,6 +31,7 @@ body {
     overflow: hidden;
 }
 
+/* ── 메인 컨테이너 ── */
 .intro-screen {
     position: relative;
     width: min(100vw, 393px);
@@ -39,51 +40,74 @@ body {
     overflow: hidden;
 }
 
+/* ── 상단 카피 텍스트 ── */
+/* 피그마: 화면 상단 약 27% 지점 */
 .intro-copy {
     position: absolute;
-    top: 28.2%;
+    top: 27%;
     left: 50%;
     transform: translateX(-50%);
     color: #ffffff;
     text-align: center;
     font-family: 'HakgyoansimAllimjang', sans-serif;
-    font-size: clamp(20px, 5.35vw, 23px);
+    font-size: clamp(20px, 5.6vw, 24px);
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.45;
     white-space: nowrap;
 }
 
+/* ── PUMTO 로고 (img.87) ── */
+/* 피그마: 텍스트 바로 아래 (top ~37%) */
 .intro-logo {
     position: absolute;
-    top: 37.5%;
+    top: 37%;
     left: 50%;
-    width: min(71.2vw, 280px);
-    height: auto;
-    transform: translate(-50%, -45px);
-    display: block;
-}
-
-.intro-character {
-    position: absolute;
-    left: 50%;
-    bottom: -0.6%;
-    width: min(84vw, 330px);
+    width: min(55vw, 216px);
     height: auto;
     transform: translateX(-50%);
     display: block;
 }
 
+/* ── 원형 캐릭터 래퍼 (img.100) ── */
+/* 피그마: 화면 하단에 크게, 원이 거의 다 보임 */
+.intro-character-wrap {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    transform: translateX(-50%);
+    width: min(68vw, 267px);
+    height: min(68vw, 267px);
+    border-radius: 50%;
+    background-color: #F5ECD7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ── 캐릭터 이미지 ── */
+.intro-character {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── 소형 화면 대응 ── */
 @media (max-height: 760px) {
     .intro-copy {
-        top: 26.5%;
+        top: 25%;
+        font-size: clamp(18px, 5.1vw, 22px);
     }
 
     .intro-logo {
-        top: 35.5%;
+        top: 35%;
+        width: min(51vw, 200px);
     }
 
-    .intro-character {
-        width: min(80vw, 315px);
-        bottom: -1%;
+    .intro-character-wrap {
+        width: min(62vw, 243px);
+        height: min(62vw, 243px);
+        bottom: 2%;
     }
 }

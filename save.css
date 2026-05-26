@@ -260,13 +260,13 @@ body {
 }
 
 .explore-title {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--green);
 }
 
 .explore-desc {
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 600;
   color: #8D8D8D;
 }

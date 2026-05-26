@@ -41,11 +41,11 @@ body, html {
 /* ── 흰색 언덕: intro-blue와 동일한 값 적용 ── */
 .white-bg-hill {
     position: absolute;
-    bottom: -15vh; /* intro-blue와 동일 → 화면에 보이는 흰색 = 45vh */
+    bottom: -15%; /* intro-blue와 동일 → 화면에 보이는 흰색 = 45% */
     left: 50%;
     transform: translateX(-50%);
     width: 200%;
-    height: 60vh; /* intro-blue와 동일 */
+    height: 60%; /* intro-blue와 동일 */
     background-color: #FFFFFF;
     border-radius: 50% 50% 0 0;
     z-index: 1;
@@ -54,7 +54,7 @@ body, html {
 /* ── 타이틀: 상단 25% 지점 ── */
 .title-section {
     position: absolute;
-    top: 20vh;
+    top: calc(20% + 4px); /* 타이틀을 아래로 4px 미세 이동 (추가 2px 하향) */
     width: 100%;
     text-align: center;
     z-index: 10;
@@ -69,11 +69,11 @@ body, html {
 }
 
 /* ── 캐릭터: 흰색 언덕 위에 걸쳐 앉은 구도 ── */
-/* 언덕이 bottom: 0에서 height: 50vh이므로, 언덕 꼭대기는 50vh 지점 */
+/* 언덕이 bottom: 0에서 height: 50%이므로, 언덕 꼭대기는 50% 지점 */
 /* 캐릭터 하단이 그 지점과 겹치도록 배치 */
 .illustration-section {
     position: absolute;
-    bottom: 40.5vh; /* 미세하게 아래로 */
+    bottom: 40.5%; /* 미세하게 아래로 */
     left: 50%;
     transform: translateX(-54%); /* 살짝 오른쪽으로 이동 */
     width: 100%;
@@ -85,20 +85,21 @@ body, html {
 .main-illust {
     width: clamp(120px, 35%, 160px); /* 크기 축소 */
     height: auto;
+    margin-bottom: 6px; /* 캐릭터를 위로 6px 이동 (추가 1px 상향) */
 }
 
-/* ── 하단 콘텐츠: 흰색 영역 내부 (visible 45vh 기준) ── */
+/* ── 하단 콘텐츠: 흰색 영역 내부 (visible 45% 기준) ── */
 .bottom-content {
     position: absolute;
-    bottom: 0;
+    bottom: 100px; /* intro-orange와 동일한 높이로 적용 */
     left: 0;
     width: 100%;
-    height: 41vh; /* 흰색 보이는 영역 45vh 안에 맞게 */
+    height: 41%; /* 흰색 보이는 영역 45% 안에 맞게 */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 70px 5vh 70px;
+    padding: 0 55px 5% 55px; /* intro-orange와 동일한 패딩 적용 */
     z-index: 10;
 }
 
@@ -106,8 +107,8 @@ body, html {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1vh;
-    margin-bottom: 5vh; /* 하단 여백을 늘려 위로 밀어 올림 */
+    gap: 18px; /* 입력란 사이 간격을 추가로 2px 더 띄움 (총 18px) */
+    margin-bottom: calc(5% + 26px); /* 간격을 더욱 늘려 입력란을 추가로 5px 더 위로 이동 */
 }
 
 .input-wrapper {
@@ -116,7 +117,7 @@ body, html {
 
 .info-input {
     width: 100%;
-    height: clamp(38px, 6vh, 50px); /* 높이를 더 축소하여 상하 부피 감소 */
+    height: clamp(38px, 6%, 50px); /* 높이를 더 축소하여 상하 부피 감소 */
     background-color: #FFFFFF;
     border: 1.5px solid #CCCCCC;
     border-radius: 20px;
@@ -134,7 +135,7 @@ body, html {
 .indicator {
     display: flex;
     gap: 8px;
-    margin-bottom: 2vh;
+    margin-bottom: calc(2% + 6px); /* 페이지 지시자 하단 간격을 6px 늘림 (+3px 추가) */
 }
 
 .dot {
@@ -152,7 +153,7 @@ body, html {
 
 .btn-next {
     width: 100%;
-    height: clamp(40px, 7vh, 60px); /* 대폭 축소하여 확인 */
+    height: clamp(40px, 7%, 55px); /* intro-orange의 버튼 높이와 동일하게 적용 */
     background-color: #8dca43;
     color: #FFFFFF;
     border: none;

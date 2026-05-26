@@ -2,24 +2,37 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>PUMTO - 그림공룡 미술학원</title>
   <link rel="stylesheet" href="academy-index.css">
   <link rel="stylesheet" href="art-academy.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <!-- IOS/Chrome PWA 설정 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="PUMTO" />
+  <link rel="apple-touch-icon" href="/PUMTO.img/logo.1.png" />
+  <!-- Android/Chrome PWA 설정 -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#FF9F46" />
+
+    <!-- 移댁뭅?ㅽ넚/SNS 怨듭쑀 ?몃꽕???ㅼ젙 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="?덊넗 - PUMTO">
+    <meta property="og:description" content="?곕━ ?꾩씠 誘몄닠??泥섏쓬遺???앷퉴吏, PUMTO">
+    <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
+    <meta property="og:url" content="https://pumto-web-app.vercel.app">
 </head>
 <body>
   <div class="mobile-container detail-container">
 
     <!-- 상단 배너 및 뒤로가기 -->
     <div class="top-banner-section">
-      <img src="./FUMTO.img/img.25.png" alt="학원 전경" class="top-banner-img">
+      <img src="./PUMTO.img/img.25.png" alt="학원 전경" class="top-banner-img">
       <div class="banner-overlay">
-        <!-- 상단 상태바 시간 -->
-        <div class="status-bar">
-          <span class="status-time">10:40</span>
-        </div>
+        
         
         <div class="top-controls">
           <button class="circle-btn" aria-label="뒤로가기" onclick="history.back()">
@@ -97,7 +110,7 @@
       
       <div class="instructor-profile">
         <div class="instructor-img-wrap">
-          <img src="./FUMTO.img/img.36.png" alt="김미래 선생님" class="instructor-img">
+          <img src="./PUMTO.img/img.36.png" alt="김미래 선생님" class="instructor-img">
         </div>
         <div class="instructor-info">
           <h3 class="instructor-name">김미래 선생님</h3>
@@ -171,21 +184,21 @@
         <h3 class="sub-title">수업 스타일</h3>
       </div>
       <div class="style-box light-green-bg">
-        <div class="style-icon"><img src="./FUMTO.img/img.44.png" alt="icon"></div>
+        <div class="style-icon"><img src="./PUMTO.img/img.44.png" alt="icon"></div>
         <div class="style-text">
           <div class="style-title">친절하고 꼼꼼하게</div>
           <div class="style-desc">처음이어도 어렵지 않아요</div>
         </div>
       </div>
       <div class="style-box light-orange-bg">
-        <div class="style-icon"><img src="./FUMTO.img/img.29.png" alt="icon"></div>
+        <div class="style-icon"><img src="./PUMTO.img/img.29.png" alt="icon"></div>
         <div class="style-text">
           <div class="style-title">1:1 맞춤 피드백</div>
           <div class="style-desc">개인 실력에 맞는 과제를 드려요</div>
         </div>
       </div>
       <div class="style-box light-green-bg">
-        <div class="style-icon"><img src="./FUMTO.img/img.31.png" alt="icon"></div>
+        <div class="style-icon"><img src="./PUMTO.img/img.31.png" alt="icon"></div>
         <div class="style-text">
           <div class="style-title">재미있는 수업</div>
           <div class="style-desc">매 수업마다 완성작을 가져가요</div>
@@ -235,13 +248,13 @@
       <h2 class="section-title">수업 현장 갤러리</h2>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="./FUMTO.img/img.37.png" alt="갤러리1">
+          <img src="./PUMTO.img/img.37.png" alt="갤러리1">
         </div>
         <div class="gallery-item">
-          <img src="./FUMTO.img/img.38.png" alt="갤러리2">
+          <img src="./PUMTO.img/img.38.png" alt="갤러리2">
         </div>
         <div class="gallery-more">
-          <img src="./FUMTO.img/img.39.png" alt="갤러리3">
+          <img src="./PUMTO.img/img.39.png" alt="갤러리3">
           <div class="more-overlay">+ 4</div>
         </div>
       </div>
@@ -254,7 +267,7 @@
       <div class="review-card">
         <div class="review-header">
           <div class="review-avatar-wrap">
-            <img src="./FUMTO.img/img.41.png" alt="여니맘" class="review-avatar">
+            <img src="./PUMTO.img/img.41.png" alt="여니맘" class="review-avatar">
           </div>
           <div class="review-info">
             <div class="review-name">여니맘</div>
@@ -272,7 +285,7 @@
       <div class="review-card">
         <div class="review-header">
           <div class="review-avatar-wrap">
-            <img src="./FUMTO.img/img.41.png" alt="다희맘" class="review-avatar">
+            <img src="./PUMTO.img/img.41.png" alt="다희맘" class="review-avatar">
           </div>
           <div class="review-info">
             <div class="review-name">다희맘</div>
@@ -341,7 +354,7 @@
     <!-- 비용 -->
     <section id="fee" class="detail-section">
       <h2 class="section-title">
-        <img src="./FUMTO.img/img.42.png" alt="icon" class="fee-icon">
+        <img src="./PUMTO.img/img.42.png" alt="icon" class="fee-icon">
         비용
       </h2>
       <div class="fee-content">
@@ -392,7 +405,7 @@
       </div>
       
       <div class="map-area">
-        <img src="./FUMTO.img/img.40.png" alt="지도" class="map-img">
+        <img src="./PUMTO.img/img.40.png" alt="지도" class="map-img">
         <div class="map-actions">
           <button class="map-btn"><i class="fa-solid fa-location-arrow mr-1 text-gray"></i> 빠른 길찾기</button>
           <div class="btn-divider"></div>
@@ -448,8 +461,56 @@
             updateSaveLinks();
           });
         }
+
+        // ── 스크롤 스파이: 탭과 섹션 연동 ──
+        const tabs = document.querySelectorAll('.sticky-tabs .tab');
+        const sectionIds = ['instructor', 'curriculum', 'gallery', 'reviews', 'summary'];
+        const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+        function setActiveTab(id) {
+          tabs.forEach(tab => {
+            tab.classList.toggle('active', tab.getAttribute('href') === '#' + id);
+          });
+        }
+
+        // 탭 클릭 시 해당 섹션으로 부드럽게 스크롤
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').replace('#', '');
+            const target = document.getElementById(targetId);
+            if (target) {
+              const stickyHeight = document.querySelector('.sticky-tabs').offsetHeight;
+              const y = target.getBoundingClientRect().top + window.pageYOffset - stickyHeight;
+              window.scrollTo({ top: y, behavior: 'smooth' });
+              setActiveTab(targetId);
+            }
+          });
+        });
+
+        // IntersectionObserver로 현재 화면에 보이는 섹션 감지
+        const observer = new IntersectionObserver((entries) => {
+          // 화면에 가장 많이 보이는 섹션을 active로 설정
+          let maxRatio = 0;
+          let activeId = null;
+          entries.forEach(entry => {
+            if (entry.intersectionRatio > maxRatio) {
+              maxRatio = entry.intersectionRatio;
+              activeId = entry.target.id;
+            }
+          });
+          if (activeId) setActiveTab(activeId);
+        }, {
+          rootMargin: '-50% 0px -45% 0px',
+          threshold: 0
+        });
+
+        sections.forEach(section => observer.observe(section));
       })();
     </script>
   </div>
 </body>
 </html>
+
+
+

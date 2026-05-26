@@ -36,63 +36,53 @@ body, html {
     position: relative;
     margin: 0 auto;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
 
 /* 하단 흰색 배경 (언덕 효과) */
 .white-bg-hill {
     position: absolute;
-    bottom: -15vh; /* 화면 높이에 비례하도록 조정 */
+    bottom: -15%;
     left: 50%;
     transform: translateX(-50%);
     width: 200%;
-    height: 60vh;
+    height: 60%;
     background-color: #FFFFFF;
     border-radius: 50% 50% 0 0;
     z-index: 1;
 }
 
-/* 콘텐츠 래퍼 - 가변 단위(vh)를 사용하여 화면 크기에 유동적으로 대응 */
-.onboarding-content {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 14vh 70px 6vh 70px; /* 화면 높이에 따른 상하단 여백 */
-    z-index: 10;
-}
-
-/* 상단 타이틀 - clamp를 사용하여 가독성 유지하며 크기 조절 */
+/* 상단 타이틀 */
 .title-section {
+    position: absolute;
+    top: calc(20% + 4px);
+    width: 100%;
     text-align: center;
-    flex-shrink: 0;
+    z-index: 10;
 }
 
 .main-title {
     color: #FFFFFF;
-    font-size: clamp(20px, 7vw, 26px); /* 크기 약간 축소 */
+    font-size: clamp(20px, 8vw, 26px);
     line-height: 1.3;
     letter-spacing: -0.64px;
     font-weight: 400;
-    margin-top: 26px; /* 조금 더 아래로 이동 */
 }
 
-/* 중앙 일러스트 섹션 - min()을 사용하여 이미지 크기 제한 */
+/* 중앙 일러스트 섹션 */
 .illustration-section {
-    flex: 1;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
-    min-height: 0; /* flex 자식의 overflow 방지 */
+    z-index: 5;
 }
 
 .illust-container {
     position: relative;
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,28 +91,34 @@ body, html {
 .main-illust {
     width: min(85%, 320px);
     height: auto;
-    transform: translateY(-20px); /* 다른 요소 유지하며 본인만 위로 이동 */
+    transform: translateY(-20px);
 }
 
 .sub-illust {
     width: min(35%, 130px);
     height: auto;
-    margin-top: -32%; /* 퍼센트 단위를 사용하여 이미지 크기에 비례하게 겹침 */
+    margin-top: -32%;
 }
 
 /* 하단 버튼 섹션 */
 .bottom-content {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
     width: 100%;
+    height: 41%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-shrink: 0;
+    justify-content: flex-end;
+    padding: 0 55px 5% 55px;
+    z-index: 10;
 }
 
 .indicator {
     display: flex;
     gap: 8px;
-    margin-bottom: 4vh; /* 화면 높이에 비례 */
+    margin-bottom: calc(2% + 6px);
 }
 
 .dot {
@@ -140,7 +136,7 @@ body, html {
 
 .btn-next {
     width: 100%;
-    height: clamp(40px, 7vh, 60px); /* intro-green과 높이 동일하게 축소 */
+    height: clamp(40px, 7%, 55px);
     background-color: #36bdf7;
     color: #FFFFFF;
     border: none;

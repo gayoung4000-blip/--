@@ -2,11 +2,27 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>품토 - 작품 상세</title>
   <link rel="stylesheet" href="project-details.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- IOS/Chrome PWA 설정 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="PUMTO" />
+  <link rel="apple-touch-icon" href="/PUMTO.img/logo.1.png" />
+  <!-- Android/Chrome PWA 설정 -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#FF9F46" />
+
+    <!-- 移댁뭅?ㅽ넚/SNS 怨듭쑀 ?몃꽕???ㅼ젙 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="?덊넗 - PUMTO">
+    <meta property="og:description" content="?곕━ ?꾩씠 誘몄닠??泥섏쓬遺???앷퉴吏, PUMTO">
+    <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
+    <meta property="og:url" content="https://pumto-web-app.vercel.app">
 </head>
 <body>
   <div class="app-container">
@@ -28,7 +44,7 @@
       <!-- Project Image Section -->
       <section class="project-image-section">
         <div class="image-wrapper">
-          <img src="./FUMTO.img/img.84.png" alt="작품 이미지" class="project-img">
+          <img src="./PUMTO.img/img.84.png" alt="작품 이미지" class="project-img">
           <div class="image-overlay">
             <div class="pagination">1 / 18</div>
             <div class="project-info">
@@ -69,7 +85,7 @@
           <div class="teacher-row">
             <div class="teacher-info">
               <div class="teacher-img-wrapper">
-                <img src="./FUMTO.img/img.83.png" alt="선생님 프로필">
+                <img src="./PUMTO.img/img.83.png" alt="선생님 프로필">
               </div>
               <div class="teacher-text">
                 <span class="label">담당 선생님</span>
@@ -128,7 +144,6 @@
           </div>
           <div class="banner-text">
             <p class="main-text">우리 아이의 멋진 순간을 남겨보세요!</p>
-            <p class="sub-text">간단한 후기 작성으로 다른 부모님께도 도움이 돼요.</p>
           </div>
         </div>
         <button class="banner-btn">후기 작성하기 <i class="fa-solid fa-chevron-right"></i></button>
@@ -178,3 +193,6 @@
   </div>
 </body>
 </html>
+
+
+
