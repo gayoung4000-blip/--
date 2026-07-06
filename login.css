@@ -181,11 +181,27 @@ body, html {
 
 .footer-signup span {
     text-decoration: underline;
-    cursor: pointer;
     margin-left: 5px;
 }
 
 /* 이미지 최적화 */
 img {
     image-rendering: -webkit-optimize-contrast;
+}
+
+/* ── 브라우저(링크) 접속 시에만 PUMTO 로고(img.20.png) 위치 위로 조금 이동 ──
+   display-mode: browser = 주소창 있는 일반 브라우저 접속
+   display-mode: standalone = 홈화면 앱 (건드리지 않음) */
+@media (display-mode: browser) {
+    .logo-img {
+        margin-top: 74px; /* 기존 94px에서 74px로 위로 조금 이동 */
+    }
+}
+
+/* ── 홈 화면 앱(PWA) 접속 시에만 캐릭터(img.87) 위치 아래로 조금 이동 ──
+   display-mode: standalone = 홈화면 앱 */
+@media (display-mode: standalone) {
+    .character-img {
+        top: 14%; /* 기존 12%에서 14%로 아래로 약간 이동 */
+    }
 }

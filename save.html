@@ -23,6 +23,7 @@
     <meta property="og:description" content="?곕━ ?꾩씠 誘몄닠??泥섏쓬遺???앷퉴吏, PUMTO">
     <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
     <meta property="og:url" content="https://pumto-web-app.vercel.app">
+    <script src="pwa-loader.js" defer></script>
 </head>
 <body>
   <div class="mobile-container">
@@ -48,11 +49,11 @@
       <!-- 저장된 학원 리스트 -->
       <section class="academy-list">
         <!-- 학원 1 -->
-        <div class="academy-card">
+        <div class="academy-card" onclick="location.href='art-academy.html'">
           <div class="img-wrapper">
             <img src="./PUMTO.img/img.25.png" alt="그림공룡 미술학원">
           </div>
-          <button class="wish-btn active"><i class="fa-solid fa-heart"></i></button>
+          <button class="wish-btn active" onclick="event.stopPropagation();"><i class="fa-solid fa-heart"></i></button>
           <div class="card-info">
             <h3 class="academy-name">그림공룡 미술학원</h3>
             <p class="academy-location">
@@ -68,12 +69,12 @@
         </div>
 
         <!-- 학원 2 -->
-        <div class="academy-card">
+        <div class="academy-card" onclick="location.href='art-academy.html'">
           <div class="img-wrapper">
             <img src="./PUMTO.img/img.54.png" alt="그림아이 미술학원">
             <img src="./PUMTO.img/img.52.png" alt="인증 배지" class="verify-badge-img">
           </div>
-          <button class="wish-btn active"><i class="fa-solid fa-heart"></i></button>
+          <button class="wish-btn active" onclick="event.stopPropagation();"><i class="fa-solid fa-heart"></i></button>
           <div class="card-info">
             <h3 class="academy-name">그림아이 미술학원</h3>
             <p class="academy-location">
@@ -89,12 +90,12 @@
         </div>
 
         <!-- 학원 3 -->
-        <div class="academy-card">
+        <div class="academy-card" onclick="location.href='art-academy.html'">
           <div class="img-wrapper">
             <img src="./PUMTO.img/img.53.png" alt="꿈꾸는 팔레트">
             <img src="./PUMTO.img/img.52.png" alt="인증 배지" class="verify-badge-img">
           </div>
-          <button class="wish-btn active"><i class="fa-solid fa-heart"></i></button>
+          <button class="wish-btn active" onclick="event.stopPropagation();"><i class="fa-solid fa-heart"></i></button>
           <div class="card-info">
             <h3 class="academy-name">꿈꾸는 팔레트</h3>
             <p class="academy-location">
@@ -110,7 +111,7 @@
         </div>
 
         <!-- 더 탐색하기 -->
-        <div class="explore-more">
+        <div class="explore-more" onclick="location.href='home.html'">
           <div class="explore-top-row">
             <span class="plus-icon">+</span>
             <span class="explore-title">더 탐색하기하고 저장하기</span>
@@ -146,21 +147,66 @@
         <i class="fa-solid fa-heart"></i>
         <span>찜</span>
       </a>
-      <div class="nav-item-center">
+      <div class="nav-item-center" onclick="location.href='creative-process.html'">
         <div class="fab-btn">
           <i class="fa-solid fa-pen"></i>
           <span class="fab-text">후기작성</span>
         </div>
       </div>
-      <a href="#" class="nav-item">
+      <a href="growth.html" class="nav-item">
         <i class="fa-solid fa-chart-line"></i>
         <span>성장</span>
       </a>
-      <a href="#" class="nav-item">
+      <a href="mypage.html" class="nav-item">
         <i class="fa-regular fa-user"></i>
         <span>마이</span>
       </a>
     </nav>
+    <script>
+      (function() {
+        // 하단 탭바 찜 링크 처리
+        const isSaved = localStorage.getItem('pumto_isSaved') === 'true';
+        document.querySelectorAll('a').forEach(link => {
+          if (link.href.includes('save-academy.html') || link.href.includes('save.html')) {
+            const currentPath = window.location.pathname;
+            if (!currentPath.includes('save.html') && !currentPath.includes('save-academy.html')) {
+              link.href = isSaved ? 'save.html' : 'save-academy.html';
+            }
+          }
+        });
+
+        // 찜 버튼 누르면 해당 카드 목록에서 제거하고 찜 상태 업데이트
+        document.querySelectorAll('.wish-btn').forEach(btn => {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // 카드 클릭 이동 이벤트 방지
+            
+            const card = this.closest('.academy-card');
+            if (!card) return;
+            
+            // 삭제 애니메이션
+            card.style.transition = 'all 0.3s ease';
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.9)';
+            
+            setTimeout(() => {
+              card.remove();
+              
+              // 현재 남은 카드 수 확인
+              const remainingCards = document.querySelectorAll('.academy-list .academy-card');
+              const countEl = document.querySelector('.save-count span:last-child');
+              if (countEl) {
+                countEl.innerText = remainingCards.length + '개 저장됨';
+              }
+              
+              if (remainingCards.length === 0) {
+                localStorage.setItem('pumto_isSaved', 'false');
+                location.href = 'save-academy.html';
+              }
+            }, 300);
+          });
+        });
+      })();
+    </script>
   </div>
 </body>
 </html>

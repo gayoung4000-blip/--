@@ -175,3 +175,12 @@ body, html {
 .btn-allow:active {
     opacity: 0.8;
 }
+
+/* ── 브라우저(링크) 접속 시에만 bottom-content 위치 조정 ──
+   display-mode: browser = 주소창 있는 일반 브라우저 접속
+   display-mode: standalone = 홈화면 앱 (건드리지 않음) */
+@media (display-mode: browser) {
+    .bottom-content {
+        bottom: 80px; /* 브라우저 링크에서만 아래로 조금 더 내림 (기존 100px -> 80px) */
+    }
+}

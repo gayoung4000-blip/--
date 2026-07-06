@@ -1,113 +1,87 @@
+/* intro_final.css — flexbox 고정 간격 */
+
 @font-face {
     font-family: 'HakgyoansimAllimjang';
     src: url('./font.file/%ED%95%99%EA%B5%90%EC%95%88%EC%8B%AC%20%EC%95%8C%EB%A6%BC%EC%9E%A5/Hakgyoansim%20Allimjang%20TTF%20R.ttf') format('truetype');
     font-weight: 400;
 }
 
-@font-face {
-    font-family: 'HakgyoansimAllimjang';
-    src: url('./font.file/%ED%95%99%EA%B5%90%EC%95%88%EC%8B%AC%20%EC%95%8C%EB%A6%BC%EC%9E%A5/Hakgyoansim%20Allimjang%20TTF%20B.ttf') format('truetype');
-    font-weight: 700;
-}
-
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,
-body {
-    width: 100%;
-    min-height: 100%;
-}
-
-body {
-    min-height: 100dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #2f2f2f;
-    overflow: hidden;
-}
-
-/* ── 메인 컨테이너 ── */
-.intro-screen {
-    position: relative;
-    width: min(100vw, 393px);
-    height: min(100dvh, 852px);
-    background: #ff9f46;
-    overflow: hidden;
-}
-
-/* ── 상단 카피 텍스트 ── */
-/* 피그마: 화면 상단 약 27% 지점 */
-.intro-copy {
-    position: absolute;
-    top: 27%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #ffffff;
-    text-align: center;
-    font-family: 'HakgyoansimAllimjang', sans-serif;
-    font-size: clamp(20px, 5.6vw, 24px);
-    font-weight: 400;
-    line-height: 1.45;
-    white-space: nowrap;
-}
-
-/* ── PUMTO 로고 (img.87) ── */
-/* 피그마: 텍스트 바로 아래 (top ~37%) */
-.intro-logo {
-    position: absolute;
-    top: 37%;
-    left: 50%;
-    width: min(55vw, 216px);
-    height: auto;
-    transform: translateX(-50%);
-    display: block;
-}
-
-/* ── 원형 캐릭터 래퍼 (img.100) ── */
-/* 피그마: 화면 하단에 크게, 원이 거의 다 보임 */
-.intro-character-wrap {
-    position: absolute;
-    left: 50%;
-    bottom: 3%;
-    transform: translateX(-50%);
-    width: min(68vw, 267px);
-    height: min(68vw, 267px);
-    border-radius: 50%;
-    background-color: #F5ECD7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* ── 캐릭터 이미지 ── */
-.intro-character {
+html, body {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    overflow: hidden;
+    background: #FF9F46;
 }
 
-/* ── 소형 화면 대응 ── */
-@media (max-height: 760px) {
-    .intro-copy {
-        top: 25%;
-        font-size: clamp(18px, 5.1vw, 22px);
-    }
+.intro-screen {
+    position: fixed;
+    inset: 0;
+    background-color: #FF9F46;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 상단 25% 지점부터 콘텐츠 시작 — 뷰포트 높이에 비례 */
+    justify-content: flex-start;
+    padding-top: 22dvh; /* 25dvh -> 22dvh로 상단 여백을 줄여 전체 콘텐츠를 약간 위로 이동 */
+}
 
-    .intro-logo {
-        top: 35%;
-        width: min(51vw, 200px);
-    }
+/* 피그마 기준 간격 (1x, px 고정):
+   텍스트 높이 67px → 로고까지 간격 3px → 로고 높이 94px → 캐릭터까지 간격 3px */
 
+.intro-copy {
+    text-align: center;
+    font-family: 'HakgyoansimAllimjang', sans-serif;
+    font-size: clamp(20px, 6.87vw, 27px);
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    margin-bottom: 3px;
+}
+
+.intro-logo {
+    width: clamp(160px, 53.2vw, 209px);
+    height: auto;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.intro-character-wrap {
+    width: clamp(200px, 70.7vw, 278px);
+    margin-top: -40px; /* 캐릭터 이미지(img.100)를 20px 더 위로 이동 */
+}
+
+.intro-character {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ── 홈 화면 앱(PWA) 접속 시에만 전체 콘텐츠(텍스트, 로고, 캐릭터) 위로 20px 이동 ──
+   display-mode: standalone = 홈화면 앱 */
+@media (display-mode: standalone) {
+    .intro-screen {
+        padding-top: calc(22dvh - 20px);
+    }
     .intro-character-wrap {
-        width: min(62vw, 243px);
-        height: min(62vw, 243px);
-        bottom: 2%;
+        margin-top: -50px; /* 기존 -40px에서 홈화면 앱 단독 10px 추가 하향(위로 이동) */
+    }
+}
+
+/* ── 일반 브라우저(링크) 접속 시에만 캐릭터(img.100) 10px 위로 이동 ──
+   display-mode: browser = 브라우저 링크 접속 */
+@media (display-mode: browser) {
+    .intro-screen {
+        padding-top: calc(22dvh - 20px); /* 텍스트, 로고, 캐릭터 전체를 위로 20px 이동 */
+    }
+    .intro-character-wrap {
+        margin-top: -50px; /* 기존 -40px에서 브라우저 링크 단독 10px 위로 이동 */
     }
 }

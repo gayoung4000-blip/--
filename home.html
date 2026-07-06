@@ -23,6 +23,7 @@
     <meta property="og:description" content="우리 아이의 상상력이 자라는 미술학원 찾기, PUMTO">
     <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
     <meta property="og:url" content="https://pumto-web-app.vercel.app">
+    <script src="pwa-loader.js" defer></script>
 </head>
 <body>
     <div class="mobile-container">
@@ -235,7 +236,7 @@
                 <i class="fa-solid fa-heart"></i>
                 <span>찜</span>
             </a>
-            <div class="nav-item-center" onclick="location.href='creative-process.html'">
+            <div class="nav-item-center">
                 <div class="fab-btn">
                     <i class="fa-solid fa-pen"></i>
                     <span class="fab-text">후기작성</span>
@@ -271,9 +272,9 @@
             if (wishCountEl) {
                 const current = parseInt(wishCountEl.innerText) || 0;
                 wishCountEl.innerText = (current + 1) + '개';
-                localStorage.setItem('pumto_isSaved', 'true');
-                updateWishTabIcon(true);
             }
+            localStorage.setItem('pumto_isSaved', 'true');
+            updateWishTabIcon(true);
         }
 
         function decreaseWishCount() {
@@ -282,10 +283,11 @@
                 const current = parseInt(wishCountEl.innerText) || 0;
                 const newCount = Math.max(0, current - 1);
                 wishCountEl.innerText = newCount + '개';
-                if (newCount === 0) {
-                    localStorage.setItem('pumto_isSaved', 'false');
-                    updateWishTabIcon(false);
-                }
+            }
+            const activeLikes = document.querySelectorAll('.like-btn.active').length;
+            if (activeLikes === 0) {
+                localStorage.setItem('pumto_isSaved', 'false');
+                updateWishTabIcon(false);
             }
         }
 
