@@ -308,32 +308,44 @@
         })();
     </script>
     <script>
-        // 가로 스크롤 영역: 가로 드래그 → 카드 스크롤, 세로 드래그 → 페이지 스크롤
-        document.querySelectorAll('.horizontal-scroll').forEach(function(el) {
-            var startX, startY, isHorizontal = null;
+        document.querySelectorAll('.horizontal-scroll, .popular-scroll').forEach(function(el) {
+            var isDown = false;
+            var isDragging = false;
+            var startX = 0;
+            var startY = 0;
+            var startScrollLeft = 0;
 
-            el.addEventListener('touchstart', function(e) {
-                startX = e.touches[0].clientX;
-                startY = e.touches[0].clientY;
-                isHorizontal = null;
-            }, { passive: true });
+            function endDrag() {
+                isDown = false;
+                el.classList.remove('is-dragging');
+            }
 
-            el.addEventListener('touchmove', function(e) {
-                if (isHorizontal === null) {
-                    var dx = Math.abs(e.touches[0].clientX - startX);
-                    var dy = Math.abs(e.touches[0].clientY - startY);
-                    if (dx > dy) {
-                        isHorizontal = true;   // 가로: 카드 스크롤
-                    } else {
-                        isHorizontal = false;  // 세로: 페이지 스크롤로 넘김
-                    }
-                }
-                if (isHorizontal) {
-                    // 가로 스크롤: 기본 동작 막고 컨테이너가 처리
-                    e.stopPropagation();
-                }
-                // 세로면 preventDefault 호출 안 함 → 페이지가 자연스럽게 스크롤
-            }, { passive: true });
+            el.addEventListener('pointerdown', function(e) {
+                isDown = true;
+                isDragging = false;
+                startX = e.clientX;
+                startY = e.clientY;
+                startScrollLeft = el.scrollLeft;
+                el.setPointerCapture(e.pointerId);
+            });
+
+            el.addEventListener('pointermove', function(e) {
+                if (!isDown) return;
+
+                var dx = e.clientX - startX;
+                var dy = e.clientY - startY;
+
+                if (!isDragging && Math.abs(dx) <= Math.abs(dy)) return;
+
+                isDragging = true;
+                el.classList.add('is-dragging');
+                el.scrollLeft = startScrollLeft - dx;
+                e.preventDefault();
+            });
+
+            el.addEventListener('pointerup', endDrag);
+            el.addEventListener('pointercancel', endDrag);
+            el.addEventListener('lostpointercapture', endDrag);
         });
     </script>
 </body>

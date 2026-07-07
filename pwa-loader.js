@@ -187,24 +187,33 @@
           offsetY = 12;
         }
 
-        dot.style.top = (rect.top + window.scrollY + offsetY) + 'px';
-        dot.style.left = (rect.right + window.scrollX + offsetX) + 'px';
+        const bodyRect = document.body.getBoundingClientRect();
+        // body 내에서의 상대 좌표 계산 (body가 중앙 정렬된 모바일 컨테이너일 때 오차 방지)
+        dot.style.top = (rect.top - bodyRect.top + offsetY) + 'px';
+        dot.style.left = (rect.right - bodyRect.left + offsetX) + 'px';
       }
 
       updatePosition();
 
-      // 스크롤, 리사이즈, 레이아웃 변경 대응
+      // 스크롤, 리사이즈, 레이아웃 변경 대응 (true를 넣어 내부 스크롤도 감지)
       window.addEventListener('resize', updatePosition);
-      window.addEventListener('scroll', updatePosition);
+      window.addEventListener('scroll', updatePosition, true);
 
-      // 혹시 모를 레이아웃 애니메이션/로딩 딜레이 등을 위해 주기적 재정렬
-      const interval = setInterval(updatePosition, 1000);
+      // 애니메이션 중에도 즉각적으로 따라가도록 프레임 단위 추적
+      let rAF;
+      function loop() {
+        updatePosition();
+        rAF = requestAnimationFrame(loop);
+      }
+      rAF = requestAnimationFrame(loop);
 
       // 요소가 DOM에서 제거되면 가이드 점도 동시 제거
       const observer = new MutationObserver(() => {
         if (!document.body.contains(element)) {
           dot.remove();
-          clearInterval(interval);
+          cancelAnimationFrame(rAF);
+          window.removeEventListener('resize', updatePosition);
+          window.removeEventListener('scroll', updatePosition, true);
           observer.disconnect();
         }
       });

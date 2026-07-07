@@ -317,3 +317,47 @@ body {
   color: #9E9E9E;
   font-weight: 600;
 }
+
+/* --- Mobile View Constraint --- */
+body {
+    max-width: 430px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    min-height: 100dvh !important;
+    transform: translateZ(0) !important;
+    overflow-x: hidden !important;
+}
+/* ------------------------------ */
+html {
+    background:
+        linear-gradient(132deg, rgba(255, 159, 70, 0.16) 0 15%, transparent 15% 100%),
+        linear-gradient(42deg, transparent 0 70%, rgba(118, 196, 171, 0.16) 70% 84%, transparent 84% 100%),
+        linear-gradient(160deg, transparent 0 38%, rgba(255, 218, 145, 0.12) 38% 49%, transparent 49% 100%),
+        repeating-linear-gradient(90deg, rgba(92, 72, 52, 0.035) 0 1px, transparent 1px 86px),
+        repeating-linear-gradient(0deg, rgba(92, 72, 52, 0.028) 0 1px, transparent 1px 86px),
+        linear-gradient(135deg, #fffaf4 0%, #fbfcf7 48%, #fff2e6 100%) !important;
+    background-attachment: fixed;
+}
+body { box-shadow: 0 0 10px rgba(0,0,0,0.1) !important; }
+
+/* --- Global Mobile View Constraints & Background --- */
+html {
+    background:
+        linear-gradient(132deg, rgba(255, 159, 70, 0.16) 0 15%, transparent 15% 100%),
+        linear-gradient(42deg, transparent 0 70%, rgba(118, 196, 171, 0.16) 70% 84%, transparent 84% 100%),
+        linear-gradient(160deg, transparent 0 38%, rgba(255, 218, 145, 0.12) 38% 49%, transparent 49% 100%),
+        repeating-linear-gradient(90deg, rgba(92, 72, 52, 0.035) 0 1px, transparent 1px 86px),
+        repeating-linear-gradient(0deg, rgba(92, 72, 52, 0.028) 0 1px, transparent 1px 86px),
+        linear-gradient(135deg, #fffaf4 0%, #fbfcf7 48%, #fff2e6 100%) !important;
+    background-attachment: fixed !important;
+}
+body {
+    max-width: 430px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    min-height: 100dvh !important;
+    transform: translateZ(0) !important;
+    overflow-x: hidden !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1) !important;
+}
+/* --------------------------------------------------- */
