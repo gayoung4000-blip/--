@@ -1021,13 +1021,28 @@ html {
 body { box-shadow: 0 0 10px rgba(0,0,0,0.1) !important; }
 /* ----------------------------------------- */
 
-/* --- Popular Scroll Drag Fix --- */
-.popular-scroll {
-    cursor: grab;
+/* --- Page-wide Drag Selection Fix --- */
+body {
     user-select: none;
-    touch-action: pan-y;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
 }
-.popular-scroll.is-dragging {
+input,
+textarea {
+    user-select: text;
+    -webkit-user-select: text;
+    -webkit-touch-callout: default;
+}
+img {
+    -webkit-user-drag: none;
+}
+.popular-scroll,
+.horizontal-scroll {
+    cursor: grab;
+}
+.popular-scroll.is-dragging,
+.horizontal-scroll.is-dragging {
     cursor: grabbing !important;
     scroll-snap-type: none !important;
 }
