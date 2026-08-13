@@ -162,7 +162,7 @@
       <p class="side-intro-copy__headline">검색에서 비교, 예약까지.<br>미술학원 선택의 과정을 더 간단하게</p>
       <p class="side-intro-copy__description">미술학원 탐색 · 비교 · 예약을 하나로 연결한 아동 미술학원 탐색 서비스 PUMTO입니다.</p>
     `;
-    document.body.appendChild(sideIntro);
+    document.documentElement.appendChild(sideIntro);
   }
 
   function initGuideDots() {
