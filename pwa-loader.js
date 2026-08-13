@@ -141,7 +141,7 @@
       .side-intro-copy__description {
         margin: 0;
         font-size: 15px;
-        line-height: 1.75;
+        line-height: 16px;
         font-weight: 500;
         color: rgba(249, 241, 232, 0.72);
         word-break: keep-all;
@@ -164,6 +164,8 @@
     `;
     document.documentElement.appendChild(sideIntro);
   }
+
+  initSideIntro();
 
   function initGuideDots() {
     if (!SHOW_GUIDE_DOTS) return;
