@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pumto-static-v4';
+const CACHE_NAME = 'pumto-static-v5';
 const IMAGE_CACHE_NAME = 'pumto-images-v1';
 
 // 설치 시 캐시할 필수 핵심 리소스 (앱 쉘)
@@ -24,7 +24,8 @@ const CORE_ASSETS = [
   '/growth.css',
   '/mypage.css',
   '/save.css',
-  '/save-academy.css'
+  '/save-academy.css',
+  '/pwa-loader.js'
 ];
 
 // 서비스 워커 설치 및 핵심 리소스 캐싱
