@@ -114,10 +114,9 @@
     style.innerHTML = `
       .side-intro-copy {
         position: fixed;
-        top: 50%;
+        top: 96px;
         right: calc(50% + 255px);
         width: min(320px, calc(50vw - 285px));
-        transform: translateY(-50%);
         z-index: 1;
         pointer-events: none;
         color: #f9f1e8;
