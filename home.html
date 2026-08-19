@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>PUMTO - 홈</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css?v=smooth-popular-scroll-2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <!-- IOS/Chrome PWA 설정 -->
@@ -23,7 +23,7 @@
     <meta property="og:description" content="우리 아이의 상상력이 자라는 미술학원 찾기, PUMTO">
     <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
     <meta property="og:url" content="https://pumto-web-app.vercel.app">
-    <script src="pwa-loader.js" defer></script>
+    <script src="pwa-loader.js?v=static-dot-5" defer></script>
 </head>
 <body>
     <div class="mobile-container">
@@ -314,13 +314,44 @@
             var startX = 0;
             var startY = 0;
             var startScrollLeft = 0;
+            var snapTimer = 0;
+
+            function snapPopularToNearestCard() {
+                var cards = Array.from(el.querySelectorAll('.academy-card'));
+                if (!cards.length) return;
+
+                var scrollerRect = el.getBoundingClientRect();
+                var scrollerCenter = scrollerRect.left + scrollerRect.width / 2;
+                var nearestCard = cards.reduce(function(nearest, card) {
+                    var cardRect = card.getBoundingClientRect();
+                    var distance = Math.abs(cardRect.left + cardRect.width / 2 - scrollerCenter);
+                    return !nearest || distance < nearest.distance ? { card: card, distance: distance } : nearest;
+                }, null).card;
+                var cardRect = nearestCard.getBoundingClientRect();
+                var targetLeft = el.scrollLeft + (cardRect.left - scrollerRect.left)
+                    - (el.clientWidth - nearestCard.offsetWidth) / 2;
+
+                el.scrollTo({ left: targetLeft, behavior: 'smooth' });
+                clearTimeout(snapTimer);
+                snapTimer = window.setTimeout(function() {
+                    el.classList.remove('is-dragging');
+                }, 350);
+            }
 
             function endDrag() {
+                if (!isDown) return;
+                var shouldSnap = isDragging && el.classList.contains('popular-scroll');
                 isDown = false;
-                el.classList.remove('is-dragging');
+                isDragging = false;
+                if (shouldSnap) {
+                    snapPopularToNearestCard();
+                } else {
+                    el.classList.remove('is-dragging');
+                }
             }
 
             el.addEventListener('pointerdown', function(e) {
+                clearTimeout(snapTimer);
                 isDown = true;
                 isDragging = false;
                 startX = e.clientX;
@@ -339,6 +370,7 @@
 
                 isDragging = true;
                 el.classList.add('is-dragging');
+                window.getSelection()?.removeAllRanges();
                 el.scrollLeft = startScrollLeft - dx;
                 e.preventDefault();
             });
@@ -346,6 +378,12 @@
             el.addEventListener('pointerup', endDrag);
             el.addEventListener('pointercancel', endDrag);
             el.addEventListener('lostpointercapture', endDrag);
+        });
+
+        document.addEventListener('selectstart', function(e) {
+            if (!e.target.closest('input, textarea, [contenteditable="true"]')) {
+                e.preventDefault();
+            }
         });
     </script>
 </body>

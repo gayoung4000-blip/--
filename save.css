@@ -43,6 +43,26 @@ body {
   background-color: #fff;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-dark);
+  font-size: 17px;
+  cursor: pointer;
+}
+
 .title {
   font-size: 19px;
   font-weight: 600;

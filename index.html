@@ -2,35 +2,36 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>PUMTO</title>
-    <link rel="stylesheet" href="/intro_final.css">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="PUMTO" />
-    <link rel="apple-touch-icon" href="/PUMTO.img/logo.1.png" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#FF9F46" />
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="품토 - PUMTO">
-    <meta property="og:description" content="우리 아이 미술의 처음부터 끝까지, PUMTO">
-    <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
-    <meta property="og:url" content="https://pumto-web-app.vercel.app">
-    <script src="pwa-loader.js" defer></script>
+    <meta name="theme-color" content="#352D28">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="PUMTO">
+    <link rel="apple-touch-icon" href="/PUMTO.img/logo.1.png">
+    <link rel="icon" href="/PUMTO.img/logo.1.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/device-shell.css?v=clean-screen-2">
+    <script src="/device-shell.js" defer></script>
 </head>
 <body>
-    <div class="intro-screen">
-        <p class="intro-copy">우리아이 미술의<br>처음부터 끝까지</p>
-        <img src="/PUMTO.img/img.87.png" alt="PUMTO" class="intro-logo">
-        <div class="intro-character-wrap">
-            <img src="/PUMTO.img/img.100.png" alt="PUMTO 캐릭터" class="intro-character">
+    <main class="device-stage" aria-label="PUMTO 앱 미리보기">
+        <aside class="brand-intro" aria-label="PUMTO 소개">
+            <h1 class="brand-intro__title">PUMTO</h1>
+            <p class="brand-intro__headline">검색에서 비교, 예약까지.<br>미술학원 선택의 과정을 더 간단하게</p>
+            <p class="brand-intro__description">미술학원 탐색 · 비교 · 예약을 하나로 연결한 아동 미술학원 탐색 서비스 PUMTO입니다.</p>
+        </aside>
+        <div class="iphone iphone--silver">
+            <span class="iphone__side-button iphone__side-button--action" aria-hidden="true"></span>
+            <span class="iphone__side-button iphone__side-button--volume-up" aria-hidden="true"></span>
+            <span class="iphone__side-button iphone__side-button--volume-down" aria-hidden="true"></span>
+            <span class="iphone__side-button iphone__side-button--power" aria-hidden="true"></span>
+            <iframe
+                class="iphone__screen"
+                src="/intro.html"
+                title="PUMTO 앱"
+                allow="clipboard-write"
+            ></iframe>
         </div>
-    </div>
-    <script>
-        setTimeout(function () {
-            window.location.href = '/intro-blue.html';
-        }, 3000);
-    </script>
+    </main>
 </body>
 </html>

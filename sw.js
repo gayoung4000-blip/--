@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pumto-static-v8';
+const CACHE_NAME = 'pumto-static-v28';
 const IMAGE_CACHE_NAME = 'pumto-images-v1';
 
 // 설치 시 캐시할 필수 핵심 리소스 (앱 쉘)
@@ -15,6 +15,8 @@ const CORE_ASSETS = [
   '/mypage.html',
   '/save.html',
   '/save-academy.html',
+  '/device-shell.css',
+  '/device-shell.js',
   '/intro_final.css',
   '/intro-blue.css',
   '/intro-orange.css',

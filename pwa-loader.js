@@ -174,40 +174,16 @@
     style.innerHTML = `
       .guide-dot {
         position: absolute;
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         background-color: #ff3b30;
         border-radius: 50%;
         z-index: 2147483647;
         pointer-events: none;
-        box-shadow: 0 0 0 2px #fff, 0 0 6px rgba(255, 59, 48, 0.8);
         display: inline-block;
       }
       .guide-dot::after {
-        content: '';
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 2px solid #ff3b30;
-        opacity: 0;
-        animation: guide-pulsate 1.5s ease-out infinite;
-        box-sizing: border-box;
-      }
-      @keyframes guide-pulsate {
-        0% {
-          transform: scale(0.2);
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          transform: scale(1.3);
-          opacity: 0;
-        }
+        content: none;
       }
     `;
     document.head.appendChild(style);
@@ -219,9 +195,33 @@
 
       const dot = document.createElement('span');
       dot.className = 'guide-dot';
-      document.body.appendChild(dot);
+      if (type === 'nav-item') {
+        if (window.getComputedStyle(element).position === 'static') {
+          element.style.position = 'relative';
+        }
+        element.appendChild(dot);
+      } else {
+        document.body.appendChild(dot);
+      }
+
+      function isInsideFixedLayer() {
+        let current = element;
+        while (current && current !== document.documentElement) {
+          if (window.getComputedStyle(current).position === 'fixed') return true;
+          current = current.parentElement;
+        }
+        return false;
+      }
 
       function updatePosition() {
+        if (type === 'nav-item') {
+          dot.style.display = 'inline-block';
+          dot.style.position = 'absolute';
+          dot.style.top = '4px';
+          dot.style.left = 'calc(50% + 5px)';
+          return;
+        }
+
         const rect = element.getBoundingClientRect();
         if (rect.width === 0 || rect.height === 0 || window.getComputedStyle(element).display === 'none') {
           dot.style.display = 'none';
@@ -233,7 +233,11 @@
         let offsetY = -6; // top alignment offset
 
         // 타입별 정밀한 가이드 점 오프셋 계산
-        if (type === 'nav-item') {
+        if (type === 'gallery-image') {
+          // 갤러리 클릭 이미지를 가리지 않고 오른쪽 흰 여백에 가까이 배치
+          offsetX = 4;
+          offsetY = 10;
+        } else if (type === 'nav-item') {
           // 탭바 아이템: 중앙 상단 부분에 배치
           offsetX = -rect.width / 2 + 5;
           offsetY = 4;
@@ -247,33 +251,42 @@
           offsetY = 12;
         }
 
-        const bodyRect = document.body.getBoundingClientRect();
-        // body 내에서의 상대 좌표 계산 (body가 중앙 정렬된 모바일 컨테이너일 때 오차 방지)
-        dot.style.top = (rect.top - bodyRect.top + offsetY) + 'px';
-        dot.style.left = (rect.right - bodyRect.left + offsetX) + 'px';
+        if (isInsideFixedLayer()) {
+          // 고정 메뉴의 점은 화면 좌표를 사용해 스크롤 순간에도 함께 움직이지 않도록 유지
+          dot.style.position = 'fixed';
+          dot.style.top = (rect.top + offsetY) + 'px';
+          dot.style.left = (rect.right + offsetX) + 'px';
+        } else {
+          const bodyRect = document.body.getBoundingClientRect();
+          // 일반 콘텐츠의 점은 기존 문서 좌표를 유지해 대상 요소를 자연스럽게 따라감
+          dot.style.position = 'absolute';
+          dot.style.top = (rect.top - bodyRect.top + offsetY) + 'px';
+          dot.style.left = (rect.right - bodyRect.left + offsetX) + 'px';
+        }
       }
 
       updatePosition();
 
-      // 스크롤, 리사이즈, 레이아웃 변경 대응 (true를 넣어 내부 스크롤도 감지)
-      window.addEventListener('resize', updatePosition);
-      window.addEventListener('scroll', updatePosition, true);
-
-      // 애니메이션 중에도 즉각적으로 따라가도록 프레임 단위 추적
-      let rAF;
-      function loop() {
-        updatePosition();
-        rAF = requestAnimationFrame(loop);
+      // 스크롤 이벤트가 몰려도 한 프레임에 한 번만 위치를 안정적으로 갱신
+      let positionFrame = 0;
+      function schedulePositionUpdate() {
+        if (positionFrame) return;
+        positionFrame = requestAnimationFrame(() => {
+          positionFrame = 0;
+          updatePosition();
+        });
       }
-      rAF = requestAnimationFrame(loop);
+
+      window.addEventListener('resize', schedulePositionUpdate, { passive: true });
+      window.addEventListener('scroll', schedulePositionUpdate, { passive: true, capture: true });
 
       // 요소가 DOM에서 제거되면 가이드 점도 동시 제거
       const observer = new MutationObserver(() => {
         if (!document.body.contains(element)) {
           dot.remove();
-          cancelAnimationFrame(rAF);
-          window.removeEventListener('resize', updatePosition);
-          window.removeEventListener('scroll', updatePosition, true);
+          if (positionFrame) cancelAnimationFrame(positionFrame);
+          window.removeEventListener('resize', schedulePositionUpdate);
+          window.removeEventListener('scroll', schedulePositionUpdate, true);
           observer.disconnect();
         }
       });
@@ -322,7 +335,7 @@
         if (offerCard) addGuideDot(offerCard, 'card');
 
         // 새로 입점한 학원 카드
-        const newAcademy = document.querySelector('.new-academy-section, .new-academy-card');
+        const newAcademy = document.querySelector('.new-academy-card');
         if (newAcademy) addGuideDot(newAcademy, 'card');
 
         // 지도 목록보기 버튼
@@ -377,7 +390,7 @@
       else if (path === 'growth.html') {
         // 작품 3 이미지 링크
         const detailLink = document.querySelector('a[href="project-details.html"]');
-        if (detailLink) addGuideDot(detailLink, 'card');
+        if (detailLink) addGuideDot(detailLink, 'gallery-image');
       }
     }
 

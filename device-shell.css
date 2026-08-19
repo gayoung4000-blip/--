@@ -1,0 +1,188 @@
+:root {
+    --phone-width: 393px;
+    --phone-height: 852px;
+    --stage-gap-x: 52px;
+    --stage-gap-y: 48px;
+    --phone-scale: 1;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+html {
+    background: #352d28;
+}
+
+body {
+    min-height: 100dvh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.055), transparent 38%),
+        #352d28;
+}
+
+.device-stage {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+}
+
+.brand-intro {
+    position: absolute;
+    top: 96px;
+    right: calc(50% + 255px);
+    width: min(320px, calc(50vw - 285px));
+    color: #f9f1e8;
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    pointer-events: none;
+}
+
+.brand-intro__title {
+    margin: 0 0 22px;
+    color: #ff9f46;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.brand-intro__headline {
+    margin: 0 0 18px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0;
+    word-break: keep-all;
+}
+
+.brand-intro__description {
+    margin: 0;
+    color: rgba(249, 241, 232, 0.72);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+    word-break: keep-all;
+}
+
+.iphone {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--phone-width);
+    height: var(--phone-height);
+    flex: none;
+    transform: translate(-50%, -50%) scale(var(--phone-scale));
+    transform-origin: center;
+    border-radius: 52px;
+    background: #ffffff;
+    box-shadow:
+        0 0 0 1px #f7f8f8,
+        0 0 0 5px #eef0f1,
+        0 0 0 10px #a9adb0,
+        0 24px 65px rgba(0, 0, 0, 0.38),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.95);
+}
+
+.iphone::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: -7px;
+    left: 50%;
+    width: 54px;
+    height: 3px;
+    border-radius: 999px;
+    background: #626669;
+    transform: translateX(-50%);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+    pointer-events: none;
+}
+
+.iphone__screen {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 44px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.iphone__side-button {
+    position: absolute;
+    z-index: -1;
+    width: 4px;
+    border-radius: 3px 0 0 3px;
+    background: linear-gradient(90deg, #85898c, #d7dadd);
+    box-shadow: inset 1px 0 rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+}
+
+.iphone__side-button--action {
+    top: 122px;
+    left: -14px;
+    height: 30px;
+}
+
+.iphone__side-button--volume-up,
+.iphone__side-button--volume-down {
+    left: -14px;
+    height: 58px;
+}
+
+.iphone__side-button--volume-up {
+    top: 177px;
+}
+
+.iphone__side-button--volume-down {
+    top: 247px;
+}
+
+.iphone__side-button--power {
+    top: 194px;
+    right: -14px;
+    width: 4px;
+    height: 86px;
+    border-radius: 0 3px 3px 0;
+    background: linear-gradient(90deg, #d7dadd, #85898c);
+}
+
+@media (max-width: 520px) {
+    :root {
+        --stage-gap-x: 32px;
+        --stage-gap-y: 32px;
+    }
+}
+
+@media (max-width: 1180px) {
+    .brand-intro {
+        width: min(260px, calc(50vw - 285px));
+    }
+
+    .brand-intro__title {
+        margin-bottom: 18px;
+        font-size: 42px;
+    }
+
+    .brand-intro__headline {
+        margin-bottom: 14px;
+        font-size: 23px;
+    }
+
+    .brand-intro__description {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .brand-intro {
+        display: none;
+    }
+}

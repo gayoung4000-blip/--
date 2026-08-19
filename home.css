@@ -1031,6 +1031,23 @@ textarea {
 img {
     -webkit-user-drag: none;
 }
+
+body *:not(input):not(textarea):not([contenteditable="true"]) {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-touch-callout: none !important;
+}
+
+body *:not(input):not(textarea):not([contenteditable="true"])::selection {
+    background: transparent;
+}
+
+body input,
+body textarea,
+body [contenteditable="true"] {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+}
 .popular-scroll,
 .horizontal-scroll {
     cursor: grab;
@@ -1040,6 +1057,22 @@ img {
     cursor: grabbing !important;
     scroll-snap-type: none !important;
 }
+
+.horizontal-scroll,
+.horizontal-scroll *,
+.popular-scroll,
+.popular-scroll * {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+}
+
+.horizontal-scroll::selection,
+.horizontal-scroll *::selection,
+.popular-scroll::selection,
+.popular-scroll *::selection {
+    background: transparent;
+}
 /* ----------------------------------------- */
 
 /* --- Body Constraint Fix --- */
@@ -1048,7 +1081,22 @@ body {
     margin: 0 auto !important;
     position: relative !important;
     min-height: 100dvh !important;
-    transform: translateZ(0) !important;
+    transform: none !important;
     overflow-x: hidden !important;
 }
 /* --------------------------- */
+
+/* --- Hide Page Scrollbar, Keep Scrolling --- */
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+/* ------------------------------------------- */

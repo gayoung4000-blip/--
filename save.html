@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>PUMTO - 저장</title>
-  <link rel="stylesheet" href="save.css">
+  <link rel="stylesheet" href="save.css?v=back-button-1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <!-- IOS/Chrome PWA 설정 -->
@@ -23,15 +23,30 @@
     <meta property="og:description" content="?곕━ ?꾩씠 誘몄닠??泥섏쓬遺???앷퉴吏, PUMTO">
     <meta property="og:image" content="https://pumto-web-app.vercel.app/PUMTO.img/some.11.png">
     <meta property="og:url" content="https://pumto-web-app.vercel.app">
-    <script src="pwa-loader.js" defer></script>
+    <script src="pwa-loader.js?v=static-dot-5" defer></script>
 </head>
 <body>
   <div class="mobile-container">
     <!-- 헤더 -->
     <header class="header">
-      <h1 class="title">저장</h1>
+      <div class="header-left">
+        <button class="save-back-btn" type="button" aria-label="뒤로가기" onclick="goBackFromSave()">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <h1 class="title">저장</h1>
+      </div>
       <button class="edit-btn">편집</button>
     </header>
+
+    <script>
+      function goBackFromSave() {
+        if (document.referrer && new URL(document.referrer).origin === location.origin) {
+          history.back();
+        } else {
+          location.href = 'home.html?v=smooth-popular-scroll-2';
+        }
+      }
+    </script>
 
     <main class="main-content">
       <!-- 저장 상태 바 -->
